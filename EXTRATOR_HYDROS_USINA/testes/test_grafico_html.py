@@ -27,23 +27,37 @@ class TestGraficoHTML(unittest.TestCase):
                     incremental_inflow_m3s=10.+c, inflow_nonnegativity_slack_m3s=2.,
                     turbined_m3s=8., spillage_m3s=3., water_withdrawal_m3s=-4.,
                     water_withdrawal_violation_neg_m3s=1.5, evaporation_m3s=-.5,
+                    water_withdrawal_violation_pos_m3s=2.5,
+                    storage_initial_hm3=100., storage_final_hm3=70.+c if s==4 else 130.+c,
                     em_enchimento=s==4, filling_target_hm3=60. if s==4 else np.nan,
                     filling_target_violation_hm3=12., data_inicio='2026-01-01' if s==4 else '2026-02-01'))
         self.arquivo = self.raiz/'teste.parquet'
         pd.DataFrame(linhas).to_parquet(self.arquivo, index=False)
         self.base = Consolidado.abrir(self.arquivo)
 
-    def test_oito_series_convertidas_com_sinais_e_meta_sem_dupla_conversao(self):
+    def test_dez_series_convertidas_com_sinais_e_meta_sem_dupla_conversao(self):
         dados = preparar_dados(self.base)
         self.assertEqual(list(dados['cenarios']), ['0', '7'])
         c = dados['cenarios']['0']
         self.assertEqual(c['estagios'], [4,9])
-        self.assertEqual(len(c['series']),8)
-        esperados = [60.48,11.52,4.32,60.,-5.76,12.,2.16,-.72]
+        self.assertEqual(len(c['series']),10)
+        esperados = [60.48,11.52,4.32,60.,-5.76,12.,2.16,-.72,-30.,3.6]
         for serie, esperado in zip(c['series'],esperados):
             self.assertAlmostEqual(serie[0],esperado)
         self.assertIsNone(c['series'][3][1])
         self.assertAlmostEqual(dados['cenarios']['7']['series'][0][0],70.56)
+        self.assertEqual(c['series'][8][1],30.)
+        self.assertEqual(dados['cenarios']['7']['series'][8][0],-23.)
+
+    def test_variacao_recalculada_dos_extremos_e_novos_campos_obrigatorios(self):
+        self.base.dados['variacao_armazenamento_hm3'] = 99999.
+        self.assertEqual(preparar_dados(self.base)['cenarios']['0']['series'][8][0],-30.)
+        for campo in ['storage_initial_hm3', 'storage_final_hm3', 'water_withdrawal_violation_pos_m3s']:
+            original = self.base.dados
+            self.base.dados = original.drop(columns=[campo])
+            with self.subTest(campo=campo), self.assertRaisesRegex(ValueError,campo):
+                preparar_dados(self.base)
+            self.base.dados = original
 
     def test_html_tem_todos_cenarios_mesmo_se_inicia_em_um_e_preserva_arquivos(self):
         destino = self.raiz/'grafico.html'

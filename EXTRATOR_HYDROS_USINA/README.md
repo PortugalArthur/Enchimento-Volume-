@@ -35,7 +35,7 @@ python -m aplicacao.ler_parquet outputs/validacao_furnas_v20_2000_cenarios.parqu
 
 Abra **GERAR_GRAFICO_HTML.bat** ou use **Gerar HTML interativo...** no leitor. Escolha o consolidado atualizado e um nome novo para o HTML. O arquivo abre no navegador e funciona sem internet, inclusive em outro computador: dados de todos os cenários e a biblioteca de gráficos ficam incluídos no próprio HTML. Use uma versão atual do Edge, Chrome ou Firefox (o navegador precisa suportar `DecompressionStream`).
 
-O seletor permite escolher **um único cenário por vez** entre os IDs presentes no Parquet. As oito séries aparecem **no mesmo gráfico**, com todos os estágios do cenário. Cada série tem uma caixa para ocultar/exibir e um seletor de cor; a legenda também oculta/exibe séries. As cores e visibilidades são mantidas ao trocar de cenário durante a sessão. Há zoom e exportação de imagem na barra do gráfico.
+O seletor permite escolher **um único cenário por vez** entre os IDs presentes no Parquet. As dez séries aparecem **no mesmo gráfico**, com todos os estágios do cenário. Cada série tem uma caixa para ocultar/exibir e um seletor de cor; a legenda também oculta/exibe séries. As cores e visibilidades são mantidas ao trocar de cenário durante a sessão. Há zoom e exportação de imagem na barra do gráfico.
 
 Todas as curvas estão em **hm³**. Vazões médias já ponderadas pelos patamares são multiplicadas por `horas_estagio × 0,0036`, sem ponderação duplicada:
 
@@ -47,6 +47,8 @@ Todas as curvas estão em **hm³**. Vazões médias já ponderadas pelos patamar
 6. **Folga da meta de enchimento:** `filling_target_violation_hm3`, sem conversão.
 7. **Folga de retirada para menos:** `water_withdrawal_violation_neg_m3s × horas_estagio × 0,0036`, preservando o valor original.
 8. **Evaporação efetiva:** `evaporation_m3s × horas_estagio × 0,0036`, preservando o sinal.
+9. **Variação do armazenamento:** `storage_final_hm3 − storage_initial_hm3`, sem nova conversão. Valores positivos indicam aumento do armazenamento; negativos indicam redução.
+10. **Folga de retirada para mais:** `water_withdrawal_violation_pos_m3s × horas_estagio × 0,0036`, preservando o valor original. Na retirada efetiva, a folga para menos é subtraída e a folga para mais é somada à retirada programada; as curvas mostram os valores das folgas sem inversão de sinal.
 
 A meta fora do enchimento é nula e a linha fica interrompida. A afluente usa as montantes selecionadas na extração; o HTML avisa quando a seleção é parcial. A definição acima não inclui desvios, bombeamento nem afluências encaminhadas de locais em pré-enchimento: não é sozinha o fechamento completo do balanço. O HTML inclui todos os cenários e estágios, mesmo se o leitor estiver filtrado; o cenário selecionado no leitor será apenas a seleção inicial.
 

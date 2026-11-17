@@ -15,16 +15,19 @@ SERIES = [
     ('Vertida pela usina', '#f59e0b'), ('Meta de enchimento', '#7c3aed'),
     ('Retirada programada', '#dc2626'), ('Folga da meta de enchimento', '#db2777'),
     ('Folga de retirada para menos', '#16a34a'), ('Evaporação efetiva', '#64748b'),
+    ('Variação do armazenamento', '#0d9488'), ('Folga de retirada para mais', '#9a3412'),
 ]
 VAZOES = ['agua_montante_turbinada_m3s', 'agua_montante_vertida_m3s',
           'incremental_inflow_m3s', 'inflow_nonnegativity_slack_m3s',
           'turbined_m3s', 'spillage_m3s', 'water_withdrawal_m3s',
-          'water_withdrawal_violation_neg_m3s', 'evaporation_m3s']
+          'water_withdrawal_violation_neg_m3s', 'evaporation_m3s',
+          'water_withdrawal_violation_pos_m3s']
+VOLUMES = ['filling_target_violation_hm3', 'storage_initial_hm3', 'storage_final_hm3']
 
 
 def preparar_dados(base):
     df = base.dados
-    faltantes = set(VAZOES + ['horas_estagio', 'filling_target_hm3', 'filling_target_violation_hm3']) - set(df)
+    faltantes = set(VAZOES + VOLUMES + ['horas_estagio', 'filling_target_hm3']) - set(df)
     if faltantes:
         raise ValueError('O consolidado não contém: ' + ', '.join(sorted(faltantes))
                          + '. Gere novamente o Parquet com o extrator atualizado e o deck completo.')
@@ -32,7 +35,7 @@ def preparar_dados(base):
         raise ValueError('horas_estagio deve conter durações finitas e positivas.')
     if not df.groupby('stage_id').horas_estagio.nunique().eq(1).all():
         raise ValueError('A duração do estágio diverge entre cenários.')
-    for c in VAZOES + ['filling_target_violation_hm3']:
+    for c in VAZOES + VOLUMES:
         if not pd.api.types.is_numeric_dtype(df[c]) or not np.isfinite(df[c]).all():
             raise ValueError(f'Valores inválidos em {c}.')
     fator = df.horas_estagio * .0036
@@ -40,7 +43,9 @@ def preparar_dados(base):
     valores = [afluente, df.turbined_m3s * fator, df.spillage_m3s * fator,
                df.filling_target_hm3, df.water_withdrawal_m3s * fator,
                df.filling_target_violation_hm3, df.water_withdrawal_violation_neg_m3s * fator,
-               df.evaporation_m3s * fator]
+               df.evaporation_m3s * fator,
+               df.storage_final_hm3 - df.storage_initial_hm3,
+               df.water_withdrawal_violation_pos_m3s * fator]
     for v in valores:
         if not np.isfinite(v.dropna()).all():
             raise ValueError('A conversão para volume produziu valor não finito.')
