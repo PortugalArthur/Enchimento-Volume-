@@ -1,0 +1,74 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/lines.schema.json",
+  "lines": [
+    {
+      "id": 0,
+      "name": "1_2",
+      "operational_start_date": "1931-01-01",
+      "source_bus_id": 0,
+      "target_bus_id": 1,
+      "capacity": {
+        "direct_mw": 9633.0,
+        "reverse_mw": 7636.0
+      }
+    },
+    {
+      "id": 1,
+      "name": "1_3",
+      "operational_start_date": "1931-01-01",
+      "source_bus_id": 0,
+      "target_bus_id": 2,
+      "capacity": {
+        "direct_mw": 6000.0,
+        "reverse_mw": 5015.0
+      }
+    },
+    {
+      "id": 2,
+      "name": "1_4",
+      "operational_start_date": "1931-01-01",
+      "source_bus_id": 0,
+      "target_bus_id": 3,
+      "capacity": {
+        "direct_mw": 4200.0,
+        "reverse_mw": 7602.0
+      }
+    },
+    {
+      "id": 3,
+      "name": "1_11",
+      "operational_start_date": "1931-01-01",
+      "source_bus_id": 0,
+      "target_bus_id": 4,
+      "capacity": {
+        "direct_mw": 5000.0,
+        "reverse_mw": 3120.0
+      },
+      "exchange_cost": 0.0001365
+    },
+    {
+      "id": 4,
+      "name": "3_11",
+      "operational_start_date": "1931-01-01",
+      "source_bus_id": 2,
+      "target_bus_id": 4,
+      "capacity": {
+        "direct_mw": 6800.0,
+        "reverse_mw": 7800.0
+      },
+      "exchange_cost": 0.0001365
+    },
+    {
+      "id": 5,
+      "name": "4_11",
+      "operational_start_date": "1931-01-01",
+      "source_bus_id": 3,
+      "target_bus_id": 4,
+      "capacity": {
+        "direct_mw": 99999.0,
+        "reverse_mw": 99999.0
+      },
+      "exchange_cost": 0.0001365
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/buses.schema.json",
+  "buses": [
+    {
+      "id": 0,
+      "name": "SUDESTE",
+      "operational_start_date": "1931-01-01",
+      "deficit_segments": [
+        {
+          "depth_mw": null,
+          "cost": 8291.25
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "SUL",
+      "operational_start_date": "1931-01-01",
+      "deficit_segments": [
+        {
+          "depth_mw": null,
+          "cost": 8291.25
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "NORDESTE",
+      "operational_start_date": "1931-01-01",
+      "deficit_segments": [
+        {
+          "depth_mw": null,
+          "cost": 8291.25
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "NORTE",
+      "operational_start_date": "1931-01-01",
+      "deficit_segments": [
+        {
+          "depth_mw": null,
+          "cost": 8291.25
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "NOFICT1",
+      "operational_start_date": "1931-01-01",
+      "deficit_segments": [
+        {
+          "depth_mw": null,
+          "cost": 8291.25
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1503 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/thermals.schema.json",
+  "thermals": [
+    {
+      "id": 0,
+      "name": "ANGRA 1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 31.17,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 640.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 1,
+      "name": "ST.CRUZ 34",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 310.41,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 2,
+      "name": "CUIABA G CC",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 853.13,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 489.98628
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 3,
+      "name": "ANGRA 2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 20.12,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 1316.115
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 4,
+      "name": "MARANHAO V",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 257.5,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 333.68384
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 5,
+      "name": "J.LACERDA C",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 333.19,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 330.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 6,
+      "name": "J.LACERDA B",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 390.24,
+      "generation": {
+        "min_mw": 67.31,
+        "max_mw": 220.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 7,
+      "name": "J.LACERDA A1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 498.15,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 80.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 8,
+      "name": "J.LACERDA A2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 399.98,
+      "generation": {
+        "min_mw": 15.0,
+        "max_mw": 110.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 9,
+      "name": "URUGUAIANA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 10,
+      "name": "MARANHAO IV",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 257.5,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 333.85264
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 11,
+      "name": "TERMOBAHIA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 158.90732
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 12,
+      "name": "N.VENECIA 2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 308.35,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 262.004289
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 13,
+      "name": "TERMORIO",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 869.58,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 989.00216
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 14,
+      "name": "ARAUCARIA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 484.004755
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 15,
+      "name": "VIANA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 1102.45,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 174.6
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 16,
+      "name": "CAMPINA GDE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 168.99546
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 17,
+      "name": "GLOBAL I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 1237.71,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 136.4
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 18,
+      "name": "JUIZ DE FORA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 86.99777
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 19,
+      "name": "GLOBAL II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 1237.71,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 136.4
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 20,
+      "name": "MARACANAU I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 21,
+      "name": "TERMOCEARA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 200.0087
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 22,
+      "name": "NORTEFLU",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 826.035898
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 23,
+      "name": "SEROPEDICA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 360.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 24,
+      "name": "IBIRITE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 868.32,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 235.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 25,
+      "name": "CANOAS",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 248.57
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 26,
+      "name": "DO ATLAN_CSA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 40.63,
+        "max_mw": 161.393859
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 27,
+      "name": "TERMONE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 159.72681075
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 28,
+      "name": "TRES LAGOAS",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 350.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 29,
+      "name": "TERMOPB",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 158.477043
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 30,
+      "name": "GERAMAR II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 1012.11,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 159.202026
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 31,
+      "name": "GERAMAR I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 1012.11,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 159.202026
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 32,
+      "name": "VALE DO ACU",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 450.86,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 110.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 33,
+      "name": "ST.CRUZ NOVA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 279.12,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 500.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 34,
+      "name": "TERMOMACAE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 907.027722
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 35,
+      "name": "TERMOPE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 822.43,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 550.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 36,
+      "name": "CUBATAO",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 353.72,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 212.09013
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 37,
+      "name": "PERNAMBU_III",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 840.7,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 200.79
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 38,
+      "name": "ERB CANDEIAS",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 118.93,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 11.999813
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 39,
+      "name": "PAMPA SUL",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 105.94,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 345.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 40,
+      "name": "XAVANTES",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 41,
+      "name": "N.PIRATINING",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 385.99362
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 42,
+      "name": "PARNAIBA IV",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 782.5,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 56.28
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 43,
+      "name": "GNA I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 536.28,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 1338.03234
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 44,
+      "name": "MAUA 3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 133.69,
+      "generation": {
+        "min_mw": 177.02,
+        "max_mw": 590.75
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 45,
+      "name": "PETROLINA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 46,
+      "name": "STA VITORIA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 164.56,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 36.9118674
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 47,
+      "name": "PROSPERIDADE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 224.31,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 27.997584
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 48,
+      "name": "SAO SEPE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 118.84,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 8.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 49,
+      "name": "POTIGUAR",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 1929.74,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 48.14
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 50,
+      "name": "TERMOCABO",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 24.884892
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 51,
+      "name": "DAIA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 52,
+      "name": "CANDIOTA 3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 350.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 53,
+      "name": "POTIGUAR III",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 1929.74,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 51.46
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 54,
+      "name": "PECEM II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 2452.56,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 144.45
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 55,
+      "name": "P. PECEM II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 325.38,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 365.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 56,
+      "name": "P. PECEM I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 315.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 719.991888
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 57,
+      "name": "SUAPE II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 994.78,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 381.26
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 58,
+      "name": "PORTO ITAQUI",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 317.23,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 360.14
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 59,
+      "name": "PALMEIRAS GO",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 60,
+      "name": "DO_ATLANTICO",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 196.48608
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 61,
+      "name": "T. NORTE 2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 62,
+      "name": "APARECIDA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 133.69,
+      "generation": {
+        "min_mw": 75.42,
+        "max_mw": 156.4384
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 63,
+      "name": "PORAQUE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 133.69,
+      "generation": {
+        "min_mw": 17.94,
+        "max_mw": 80.00106
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 64,
+      "name": "JARAQUI",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 133.69,
+      "generation": {
+        "min_mw": 16.04,
+        "max_mw": 63.003156
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 65,
+      "name": "PIRARUCU",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 133.69,
+      "generation": {
+        "min_mw": 18.67,
+        "max_mw": 66.99952
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 66,
+      "name": "TUCUNARE",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 133.69,
+      "generation": {
+        "min_mw": 18.67,
+        "max_mw": 65.78842
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 67,
+      "name": "TAMBAQUI",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 133.69,
+      "generation": {
+        "min_mw": 19.09,
+        "max_mw": 74.55406848
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 68,
+      "name": "BAIXADA FLU",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 274.9,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 530.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 69,
+      "name": "MARANHAO III",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 116.1,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 506.81572
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 70,
+      "name": "PROSPERI III",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 228.55,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 55.99
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 71,
+      "name": "P. SERGIPE I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 295.58,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 1593.04068
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 72,
+      "name": "ONCA PINTADA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 152.33,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 50.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 73,
+      "name": "CAMACARI MII",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 2427.25,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 144.45
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 74,
+      "name": "MARLIM AZUL",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 125.75,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 565.5
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 75,
+      "name": "CAMBARA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 246.34,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 48.02
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 76,
+      "name": "GNA II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 460.53,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 1672.6
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 77,
+      "name": "PARNAIBA V",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 226.46,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 357.83094
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 78,
+      "name": "NT BARCARENA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 369.74,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 622.44693
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 79,
+      "name": "PROSPERID II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "cost_per_mwh": 278.66,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 37.301472
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 80,
+      "name": "KARKEY 013",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 725.37,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 256.001872
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 81,
+      "name": "KARKEY 019",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 725.37,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 115.92
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 82,
+      "name": "LINHARES PCS",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 11.6208
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 83,
+      "name": "PAULINIA VER",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 84,
+      "name": "PORSUD I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 856.81,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 115.92
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 85,
+      "name": "PORSUD II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 858.38,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 77.998888
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 86,
+      "name": "POVOACAO 1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 23.642384
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 87,
+      "name": "VIANA 1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 37.48
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 88,
+      "name": "B. BONITA I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 0.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 89,
+      "name": "LINHARES LRC",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 869.13,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 199.5324
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 90,
+      "name": "TROMBUDO",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "cost_per_mwh": 590.54,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 27.1794
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 91,
+      "name": "PORTOCEM I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 707.69,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 1548.31165
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 92,
+      "name": "AZULAO",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 806.67,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 350.655
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 93,
+      "name": "AZULAO II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 172.29,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 277.76949003
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 94,
+      "name": "AZULAO IV",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 172.29,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 277.76949003
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 95,
+      "name": "MANAUS I",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 112.43,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 155.660505
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 96,
+      "name": "BBF BALIZA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 882.76,
+      "generation": {
+        "min_mw": 5.0,
+        "max_mw": 9.68534
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 97,
+      "name": "BONFIM",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 559.7,
+      "generation": {
+        "min_mw": 4.08,
+        "max_mw": 11.27
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 98,
+      "name": "CANTA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 559.7,
+      "generation": {
+        "min_mw": 4.08,
+        "max_mw": 11.27
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 99,
+      "name": "JAGUATIRI II",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 289.25,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 126.282261
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 100,
+      "name": "M.CRISTO SUC",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 1059.07,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 37.99965
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 101,
+      "name": "PALMAPLAN 2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 911.73,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 11.444895
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 102,
+      "name": "PAU RAINHA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 559.7,
+      "generation": {
+        "min_mw": 4.08,
+        "max_mw": 11.27
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 103,
+      "name": "SANTA LUZ",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "cost_per_mwh": 559.7,
+      "generation": {
+        "min_mw": 4.08,
+        "max_mw": 11.27
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 104,
+      "name": "W. ARJONA",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 868.05,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 144.001182
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 105,
+      "name": "LORM_MCH",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 240.0
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    },
+    {
+      "id": 106,
+      "name": "POVOACAO_MCH",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "cost_per_mwh": 0.0,
+      "generation": {
+        "min_mw": 0.0,
+        "max_mw": 74.96
+      },
+      "anticipated_config": null,
+      "entry_stage_id": null,
+      "exit_stage_id": null
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "command": "convert newave",
+  "source_dir": "newave",
+  "output_dir": "cobre_7",
+  "bridge_version": "0.20.0",
+  "git_sha": null,
+  "timestamp": "2026-11-05T11:26:14.464198+00:00",
+  "entity_counts": {
+    "hydros": 159,
+    "thermals": 107,
+    "buses": 5,
+    "lines": 6,
+    "stages": 72
+  },
+  "input_files": [
+    {
+      "field": "adterm",
+      "path": "newave/adterm.dat",
+      "sha256": "2126765a1a73130652a5e0d67d615df595c7f75de88c03821803fb59de2b13ca",
+      "size_bytes": 371
+    },
+    {
+      "field": "agrint",
+      "path": "newave/agrint.dat",
+      "sha256": "d1b699ac14c039fc896a315c58779491b295cba8f41777350e76e0fd6da1fa8f",
+      "size_bytes": 707
+    },
+    {
+      "field": "c_adic",
+      "path": "newave/c_adic.dat",
+      "sha256": "6ed5c67abdce1e9d368dca99cd5b5bd88bc95c95439fa9f42c581f3c4d2c8eed",
+      "size_bytes": 3228
+    },
+    {
+      "field": "clast",
+      "path": "newave/clast.dat",
+      "sha256": "1d100e06ecc00f688c6c27f3504a6c917259252477fff63c7cce5a47f1dabd59",
+      "size_bytes": 10854
+    },
+    {
+      "field": "confhd",
+      "path": "newave/confhd.dat",
+      "sha256": "52333d4df1b831f5ae5ac417f10c6c5f7aeae6621fcce802fcc3a975fd84e5c0",
+      "size_bytes": 12485
+    },
+    {
+      "field": "conft",
+      "path": "newave/conft.dat",
+      "sha256": "b1d14e504baae5af7a0d9ba4fad88e9949af417e95f58285f534d551a815636f",
+      "size_bytes": 4361
+    },
+    {
+      "field": "curva",
+      "path": "newave/curva.dat",
+      "sha256": "b2ba8968a85c0336c594a3f85b4254597826e474f43cbd9947b8224d2b8f21e6",
+      "size_bytes": 2449
+    },
+    {
+      "field": "cvar",
+      "path": "newave/cvar.dat",
+      "sha256": "0ff7aef95ca87dc5b6391c4b7da9e9d25173290a9e6ea363928b36893a312dfc",
+      "size_bytes": 1040
+    },
+    {
+      "field": "dger",
+      "path": "newave/dger.dat",
+      "sha256": "6906fa92368ce37c602b0c5c90d1354a91cbc6e68a999b429fac206572e43a4a",
+      "size_bytes": 6875
+    },
+    {
+      "field": "dsvagua",
+      "path": "newave/dsvagua.dat",
+      "sha256": "e8091f532cebf17dee437ec2a038060e8d18fa06afca76b60f2fd568132e6f0d",
+      "size_bytes": 70773
+    },
+    {
+      "field": "exph",
+      "path": "newave/exph.dat",
+      "sha256": "9c89f901964572305771810c7c64d11490893bec66bb9fb2ba6decd5c75ec9b2",
+      "size_bytes": 423
+    },
+    {
+      "field": "expt",
+      "path": "newave/expt.dat",
+      "sha256": "913c8b4417ad1bdfe09273d9006118e51c9323e24487989ef3963e7d5f0a127e",
+      "size_bytes": 29100
+    },
+    {
+      "field": "ghmin",
+      "path": "newave/ghmin.dat",
+      "sha256": "d0b3582be93aaf9751b7cf7c1c99fdce04a3abbad6f8818e31caeac8c41e1d2d",
+      "size_bytes": 1733
+    },
+    {
+      "field": "hidr",
+      "path": "newave/hidr.dat",
+      "sha256": "e8617a28f2bfe2bf3bdaae4420ff90efd8c1aa9c8a7160e05bbb3fa0c7410fc3",
+      "size_bytes": 253440
+    },
+    {
+      "field": "libs_index",
+      "path": "newave/indices.csv",
+      "sha256": "550575ae318b91097956e8ec7b7d56d67888798d56ed3daf8b3b38ff735cf522",
+      "size_bytes": 184
+    },
+    {
+      "field": "manutt",
+      "path": "newave/manutt.dat",
+      "sha256": "10329ca26baf81c0e3452bfc05f67e230b7adbaf038253c69f573f84a9b6ee52",
+      "size_bytes": 12599
+    },
+    {
+      "field": "modif",
+      "path": "newave/modif.dat",
+      "sha256": "12c3a58a210df9e1ba97113d67ec01d8dd044744ce1edc39a06eef645716d5cb",
+      "size_bytes": 34666
+    },
+    {
+      "field": "patamar",
+      "path": "newave/patamar.dat",
+      "sha256": "5306a461cb5d53db5e6ead6f1f976cec2849155721f91501e175e37413241585",
+      "size_bytes": 41847
+    },
+    {
+      "field": "penalid",
+      "path": "newave/penalid.dat",
+      "sha256": "653bb62990465942d9abc604266a14a3c286e95728816adc6dcbcc653d379128",
+      "size_bytes": 2960
+    },
+    {
+      "field": "polinjus",
+      "path": "newave/polinjus.csv",
+      "sha256": "ce591738fccdc0641fa351e468a7a351de1f5a42aacd207d6296a63bececc5e7",
+      "size_bytes": 264925
+    },
+    {
+      "field": "re_dat",
+      "path": "newave/re.dat",
+      "sha256": "01b8041edd83c849065904e2779e2b76fc9d374ec3116d27c181253f58d38420",
+      "size_bytes": 398
+    },
+    {
+      "field": "ree",
+      "path": "newave/ree.dat",
+      "sha256": "9e4450828425fae33f0562923db4ea713c91cb499fb77bbfd675aa730f97bbe4",
+      "size_bytes": 485
+    },
+    {
+      "field": "restricao_eletrica",
+      "path": "newave/restricao-eletrica.csv",
+      "sha256": "acaf813ed5339e137949ea5cce2945013e62df1fb777464c0220cb8543cb7199",
+      "size_bytes": 8601
+    },
+    {
+      "field": "shist",
+      "path": "newave/shist.dat",
+      "sha256": "492e52e4cb3c4fe9b19f47e630ab9c712b0f4b7368ddddee3c468d72ac869f89",
+      "size_bytes": 88
+    },
+    {
+      "field": "sistema",
+      "path": "newave/sistema.dat",
+      "sha256": "fc4f6f935fbc1708d011b8d57817869a490645c359aa342dd438aeb51bf3afc9",
+      "size_bytes": 17019
+    },
+    {
+      "field": "term",
+      "path": "newave/term.dat",
+      "sha256": "5a2dcaf9549c7cff54ac032d92740f03a7fbdd69151f5bb1e4fddb19e9b8c336",
+      "size_bytes": 14823
+    },
+    {
+      "field": "vazoes",
+      "path": "newave/vazoes.dat",
+      "sha256": "2f985e076c00feeedfa2c3ef9ba833b50b5fcab94f4309b0f26e20cc050e7e94",
+      "size_bytes": 1459200
+    },
+    {
+      "field": "vazpast",
+      "path": "newave/vazpast.dat",
+      "sha256": "df941f92a1c656f1269d27739a6de647de6312b2d307fb468c52546b67e2ea3d",
+      "size_bytes": 31170
+    },
+    {
+      "field": "volref_saz",
+      "path": "newave/volref_saz.dat",
+      "sha256": "56b4d282805f513516a4d1b8ec9c57ad5f5a175ac5c6a6a75eaec887aee7ccf0",
+      "size_bytes": 20972
+    },
+    {
+      "field": "volumes_referencia",
+      "path": "newave/volumes-referencia.csv",
+      "sha256": "28db48f5be3ba17b8a378cfa22185d2900a0d4850a95f1c0c5271c12d45ede6c",
+      "size_bytes": 794537
+    }
+  ],
+  "diagnostics_summary": {
+    "info": 4,
+    "warning": 2
+  },
+  "diagnostics": [
+    {
+      "code": "fictitious-plants-excluded",
+      "severity": "info",
+      "category": "Entity exclusion",
+      "title": "Fictitious plants excluded (10)",
+      "summary": "Excluded 10 fictitious accounting plant(s) from the id map (zero-productivity nodes sharing a real plant's posto).",
+      "table": {
+        "columns": [
+          "Code",
+          "Name"
+        ],
+        "rows": [
+          [
+            291,
+            "FICT.SERRA M"
+          ],
+          [
+            292,
+            "FICT.CANA BR"
+          ],
+          [
+            294,
+            "FICT.QUEIMAD"
+          ],
+          [
+            295,
+            "FICT.TRES MA"
+          ],
+          [
+            298,
+            "FICT.IRAPE"
+          ],
+          [
+            302,
+            "FICT.LAJEADO"
+          ],
+          [
+            303,
+            "FICT.PEIXE A"
+          ],
+          [
+            306,
+            "FICT.SAO SAL"
+          ],
+          [
+            308,
+            "FICT.RETIRO"
+          ],
+          [
+            319,
+            "FICT.MAUA"
+          ]
+        ],
+        "justify": [
+          "right",
+          "left"
+        ],
+        "caption": null
+      },
+      "notes": [],
+      "remediation": null
+    },
+    {
+      "code": "ne-filling-plant",
+      "severity": "info",
+      "category": "Filling plants",
+      "title": "Dead-volume filling plants admitted (1)",
+      "summary": "1 NE plant(s) admitted with a dead-volume filling schedule; each fills before operating and ramps capacity as units come online.",
+      "table": {
+        "columns": [
+          "Plant",
+          "Code",
+          "Fill start",
+          "Operates from",
+          "Vol. morto %",
+          "Unit ramp"
+        ],
+        "rows": [
+          [
+            "ESTRELA",
+            260,
+            10,
+            12,
+            "0.0",
+            "conj 1: 3 units @ stage 24"
+          ]
+        ],
+        "justify": [
+          "left",
+          "right",
+          "right",
+          "right",
+          "right",
+          "left"
+        ],
+        "caption": "Stage ids are 0-based; capacity is 0 until 'Operates from'."
+      },
+      "notes": [],
+      "remediation": null
+    },
+    {
+      "code": "hydro-geometry-extended",
+      "severity": "info",
+      "category": "Hydro geometry",
+      "title": "Hydro geometry extended past the storage range (1 plant(s))",
+      "summary": "1 plant(s) have an FPHA reference volume outside [volume_minimo, volume_maximo], where the source model reads the downstream level of the plant above. Their geometry samples the volume-to-height polynomial out to those volumes.",
+      "table": {
+        "columns": [
+          "Plant",
+          "Code",
+          "volume_minimo (hm\u00b3)",
+          "volume_maximo (hm\u00b3)",
+          "Sampled from (hm\u00b3)",
+          "Sampled to (hm\u00b3)"
+        ],
+        "rows": [
+          [
+            "RETIRO BAIXO",
+            155,
+            200.72,
+            241.59,
+            200.22,
+            241.59
+          ]
+        ],
+        "justify": [
+          "left",
+          "right",
+          "right",
+          "right",
+          "right",
+          "right"
+        ],
+        "caption": null
+      },
+      "notes": [],
+      "remediation": null
+    },
+    {
+      "code": "vminop-penalization-not-fixa",
+      "severity": "warning",
+      "category": "Special constraints",
+      "title": "Security curve uses non-FIXA penalization",
+      "summary": "curva.dat selects TIPO DE PENALIZACAO = 1 (non-FIXA): novomodelo-bridge models the FIXA convention and does not reproduce NEWAVE's iterative / variable curve penalization, so a VminOP violation-penalty difference is expected.",
+      "table": null,
+      "notes": [],
+      "remediation": "Check curva.dat's TIPO DE PENALIZACAO field."
+    },
+    {
+      "code": "fpha-spill-outside-tailrace",
+      "severity": "info",
+      "category": "Hydro production model",
+      "title": "FPHA spillage outside the tailrace not converted (2)",
+      "summary": "The source model leaves the spilled flow of 2 FPHA plant(s) out of their tailrace level, so their planes carry no spillage term. Novomodelo's fit raises the tailrace with the spilled flow, so their planes lose generation as they spill.",
+      "table": {
+        "columns": [
+          "Code",
+          "Name",
+          "Stages"
+        ],
+        "rows": [
+          [
+            185,
+            "BARRA BRAUNA",
+            "0-71"
+          ],
+          [
+            225,
+            "SLT APIACAS",
+            "0-71"
+          ]
+        ],
+        "justify": null,
+        "caption": "Stage ids are 0-based."
+      },
+      "notes": [],
+      "remediation": null
+    },
+    {
+      "code": "thermal-gtmin-above-capacity",
+      "severity": "warning",
+      "category": "Thermal bounds",
+      "title": "GTMIN exceeds available capacity (2 plant(s))",
+      "summary": "GTMIN exceeds the available capacity (after FCMAX, TEIF, IP and maintenance) for 2 thermal plant(s) in at least one stage; honoring GTMIN to keep the LP feasible.",
+      "table": {
+        "columns": [
+          "Plant",
+          "Code",
+          "Stages",
+          "GTMIN MW",
+          "Cap MW",
+          "Excess MW"
+        ],
+        "rows": [
+          [
+            "ANGRA 2",
+            13,
+            "2",
+            1061.44,
+            1061.38,
+            0.06
+          ],
+          [
+            "MAUA 3",
+            140,
+            "8",
+            453.84,
+            453.83,
+            0.01
+          ]
+        ],
+        "justify": [
+          "left",
+          "right",
+          "left",
+          "right",
+          "right",
+          "right"
+        ],
+        "caption": "GTMIN = max, Cap = min available capacity, Excess = largest single-stage excess across the listed stages"
+      },
+      "notes": [],
+      "remediation": "Check EXPT FCMAX/GTMIN and MANUTT for these plants."
+    }
+  ],
+  "min_novomodelo_version": "0.20.0"
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/config.schema.json",
+  "estimation": {
+    "max_order": 6,
+    "order_selection": "pacf_annual"
+  },
+  "training": {
+    "selection": {
+      "method": "sampled",
+      "forward_passes": 200
+    },
+    "stopping_rules": [
+      {
+        "type": "iteration_limit",
+        "limit": 50
+      }
+    ],
+    "cut_selection": {
+      "row_activity_tolerance": 1e-06,
+      "selection": {
+        "method": "level1",
+        "check_frequency": 1,
+        "lookback_iterations": 2
+      }
+    },
+    "parallelism": {
+      "backward_scheduler": {
+        "method": "by_node",
+        "block_size": 10
+      }
+    },
+    "scenario_source": {
+      "seed": 42,
+      "inflow": {
+        "scheme": "out_of_sample"
+      }
+    }
+  },
+  "modeling": {
+    "inflow_non_negativity": {
+      "method": "truncation_with_penalty"
+    }
+  },
+  "exports": {
+    "states": false,
+    "stochastic": true
+  },
+  "simulation": {
+    "enabled": true,
+    "selection": {
+      "method": "sampled",
+      "num_scenarios": 2000
+    },
+    "cut_set": "active",
+    "scenario_source": {
+      "seed": 42,
+      "inflow": {
+        "scheme": "out_of_sample"
+      }
+    }
+  }
+}

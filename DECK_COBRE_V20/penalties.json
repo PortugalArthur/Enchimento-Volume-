@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/penalties.schema.json",
+  "bus": {
+    "deficit_segments": [
+      {
+        "cost": 8291.25,
+        "depth_mw": null
+      }
+    ],
+    "excess_cost": 0.000355
+  },
+  "hydro": {
+    "spillage_cost": 0.000188660084009105,
+    "turbined_cost": 0.000209412693250107,
+    "diversion_cost": 0.000188660084009105,
+    "storage_violation_below_cost": 148453756.624653,
+    "filling_target_violation_cost": 13360838.0962188,
+    "turbined_violation_below_cost": 2000.41318010428,
+    "outflow_violation_below_cost": 2000.41318010428,
+    "outflow_violation_above_cost": 2000.41318010428,
+    "generation_violation_below_cost": 3180.98,
+    "evaporation_violation_cost": 534433.523848751,
+    "water_withdrawal_violation_cost": 53499.7527266049,
+    "inflow_nonnegativity_cost": 53500.7527266049
+  },
+  "line": {
+    "exchange_cost": 0.000273
+  },
+  "non_controllable_source": {
+    "curtailment_cost": 0.0001
+  }
+}

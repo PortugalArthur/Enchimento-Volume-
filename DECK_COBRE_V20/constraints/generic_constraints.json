@@ -1,0 +1,186 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/generic_constraints.schema.json",
+  "constraints": [
+    {
+      "id": 0,
+      "name": "VminOP_SUDESTE",
+      "description": "Minimum stored energy for REE 1 (SUDESTE)",
+      "expression": "@rho_acum_mwh_h78 * hydro_useful_volume_final(78) + @rho_acum_mwh_h79 * hydro_useful_volume_final(79) + @rho_acum_mwh_h81 * hydro_useful_volume_final(81) + @rho_acum_mwh_h82 * hydro_useful_volume_final(82) + @rho_acum_mwh_h83 * hydro_useful_volume_final(83) + @rho_acum_mwh_h84 * hydro_useful_volume_final(84) + @rho_acum_mwh_h85 * hydro_useful_volume_final(85) + @rho_acum_mwh_h100 * hydro_useful_volume_final(100) + @rho_acum_mwh_h103 * hydro_useful_volume_final(103) + @rho_acum_mwh_h104 * hydro_useful_volume_final(104) + @rho_acum_mwh_h105 * hydro_useful_volume_final(105) + @rho_acum_mwh_h128 * hydro_useful_volume_final(128) + @rho_acum_mwh_h131 * hydro_useful_volume_final(131) + @rho_acum_mwh_h140 * hydro_useful_volume_final(140) >= @pct_vminop_ree1 * (@earm_max_mwh_h78 + @earm_max_mwh_h79 + @earm_max_mwh_h81 + @earm_max_mwh_h82 + @earm_max_mwh_h83 + @earm_max_mwh_h84 + @earm_max_mwh_h85 + @earm_max_mwh_h100 + @earm_max_mwh_h103 + @earm_max_mwh_h104 + @earm_max_mwh_h105 + @earm_max_mwh_h128 + @earm_max_mwh_h131 + @earm_max_mwh_h140)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_unit"
+      }
+    },
+    {
+      "id": 1,
+      "name": "VminOP_SUL",
+      "description": "Minimum stored energy for REE 2 (SUL)",
+      "expression": "@rho_acum_mwh_h57 * hydro_useful_volume_final(57) + @rho_acum_mwh_h58 * hydro_useful_volume_final(58) + @rho_acum_mwh_h59 * hydro_useful_volume_final(59) + @rho_acum_mwh_h60 * hydro_useful_volume_final(60) + @rho_acum_mwh_h61 * hydro_useful_volume_final(61) + @rho_acum_mwh_h63 * hydro_useful_volume_final(63) + @rho_acum_mwh_h65 * hydro_useful_volume_final(65) + @rho_acum_mwh_h72 * hydro_useful_volume_final(72) + @rho_acum_mwh_h73 * hydro_useful_volume_final(73) + @rho_acum_mwh_h77 * hydro_useful_volume_final(77) >= @pct_vminop_ree2 * (@earm_max_mwh_h57 + @earm_max_mwh_h58 + @earm_max_mwh_h59 + @earm_max_mwh_h60 + @earm_max_mwh_h61 + @earm_max_mwh_h63 + @earm_max_mwh_h65 + @earm_max_mwh_h72 + @earm_max_mwh_h73 + @earm_max_mwh_h77)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_unit"
+      }
+    },
+    {
+      "id": 2,
+      "name": "VminOP_NORDESTE",
+      "description": "Minimum stored energy for REE 3 (NORDESTE)",
+      "expression": "@rho_acum_mwh_h106 * hydro_useful_volume_final(106) + @rho_acum_mwh_h107 * hydro_useful_volume_final(107) + @rho_acum_mwh_h111 * hydro_useful_volume_final(111) + @rho_acum_mwh_h112 * hydro_useful_volume_final(112) >= @pct_vminop_ree3 * (@earm_max_mwh_h106 + @earm_max_mwh_h107 + @earm_max_mwh_h111 + @earm_max_mwh_h112)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_unit"
+      }
+    },
+    {
+      "id": 3,
+      "name": "VminOP_NORTE",
+      "description": "Minimum stored energy for REE 4 (NORTE)",
+      "expression": "@rho_acum_mwh_h137 * hydro_useful_volume_final(137) >= @pct_vminop_ree4 * @earm_max_mwh_h137",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_unit"
+      }
+    },
+    {
+      "id": 4,
+      "name": "VminOP_PARANA",
+      "description": "Minimum stored energy for REE 10 (PARANA)",
+      "expression": "@rho_acum_mwh_h0 * hydro_useful_volume_final(0) + @rho_acum_mwh_h3 * hydro_useful_volume_final(3) + @rho_acum_mwh_h4 * hydro_useful_volume_final(4) + @rho_acum_mwh_h10 * hydro_useful_volume_final(10) + @rho_acum_mwh_h13 * hydro_useful_volume_final(13) + @rho_acum_mwh_h14 * hydro_useful_volume_final(14) + @rho_acum_mwh_h15 * hydro_useful_volume_final(15) + @rho_acum_mwh_h16 * hydro_useful_volume_final(16) + @rho_acum_mwh_h17 * hydro_useful_volume_final(17) + @rho_acum_mwh_h18 * hydro_useful_volume_final(18) + @rho_acum_mwh_h19 * hydro_useful_volume_final(19) + @rho_acum_mwh_h20 * hydro_useful_volume_final(20) + @rho_acum_mwh_h22 * hydro_useful_volume_final(22) + @rho_acum_mwh_h23 * hydro_useful_volume_final(23) + @rho_acum_mwh_h24 * hydro_useful_volume_final(24) + @rho_acum_mwh_h26 * hydro_useful_volume_final(26) + @rho_acum_mwh_h27 * hydro_useful_volume_final(27) + @rho_acum_mwh_h28 * hydro_useful_volume_final(28) + @rho_acum_mwh_h31 * hydro_useful_volume_final(31) + @rho_acum_mwh_h33 * hydro_useful_volume_final(33) + @rho_acum_mwh_h117 * hydro_useful_volume_final(117) + @rho_acum_mwh_h150 * hydro_useful_volume_final(150) >= @pct_vminop_ree10 * (@earm_max_mwh_h0 + @earm_max_mwh_h3 + @earm_max_mwh_h4 + @earm_max_mwh_h10 + @earm_max_mwh_h13 + @earm_max_mwh_h14 + @earm_max_mwh_h15 + @earm_max_mwh_h16 + @earm_max_mwh_h17 + @earm_max_mwh_h18 + @earm_max_mwh_h19 + @earm_max_mwh_h20 + @earm_max_mwh_h22 + @earm_max_mwh_h23 + @earm_max_mwh_h24 + @earm_max_mwh_h26 + @earm_max_mwh_h27 + @earm_max_mwh_h28 + @earm_max_mwh_h31 + @earm_max_mwh_h33 + @earm_max_mwh_h117 + @earm_max_mwh_h150)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_unit"
+      }
+    },
+    {
+      "id": 5,
+      "name": "VminOP_IGUACU",
+      "description": "Minimum stored energy for REE 11 (IGUACU)",
+      "expression": "@rho_acum_mwh_h43 * hydro_useful_volume_final(43) + @rho_acum_mwh_h48 * hydro_useful_volume_final(48) + @rho_acum_mwh_h50 * hydro_useful_volume_final(50) + @rho_acum_mwh_h51 * hydro_useful_volume_final(51) + @rho_acum_mwh_h52 * hydro_useful_volume_final(52) + @rho_acum_mwh_h53 * hydro_useful_volume_final(53) >= @pct_vminop_ree11 * (@earm_max_mwh_h43 + @earm_max_mwh_h48 + @earm_max_mwh_h50 + @earm_max_mwh_h51 + @earm_max_mwh_h52 + @earm_max_mwh_h53)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_unit"
+      }
+    },
+    {
+      "id": 6,
+      "name": "VminOP_PRNPANEMA",
+      "description": "Minimum stored energy for REE 12 (PRNPANEMA)",
+      "expression": "@rho_acum_mwh_h36 * hydro_useful_volume_final(36) + @rho_acum_mwh_h38 * hydro_useful_volume_final(38) + @rho_acum_mwh_h44 * hydro_useful_volume_final(44) >= @pct_vminop_ree12 * (@earm_max_mwh_h36 + @earm_max_mwh_h38 + @earm_max_mwh_h44)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_unit"
+      }
+    },
+    {
+      "id": 7,
+      "name": "RE_1",
+      "description": "Electric constraint 1",
+      "expression": "hydro_generation(146) + hydro_generation(148)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_hour"
+      }
+    },
+    {
+      "id": 8,
+      "name": "RE_10",
+      "description": "Electric constraint 10",
+      "expression": "hydro_generation(118) + hydro_generation(145)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_hour"
+      }
+    },
+    {
+      "id": 9,
+      "name": "RE_20",
+      "description": "Electric constraint 20",
+      "expression": "line_reverse(0) + 0.5 * hydro_generation(47)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_hour"
+      }
+    },
+    {
+      "id": 10,
+      "name": "RE_21",
+      "description": "Electric constraint 21",
+      "expression": "line_reverse(3) + hydro_generation(133) + hydro_generation(131)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_hour"
+      }
+    },
+    {
+      "id": 11,
+      "name": "RE_22",
+      "description": "Electric constraint 22",
+      "expression": "line_reverse(3) + line_reverse(1) + hydro_generation(133) + hydro_generation(131)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_hour"
+      }
+    },
+    {
+      "id": 12,
+      "name": "RE_23",
+      "description": "Electric constraint 23",
+      "expression": "line_reverse(3) + line_reverse(1) + line_reverse(2) + hydro_generation(133) + hydro_generation(131)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_hour"
+      }
+    },
+    {
+      "id": 13,
+      "name": "RE_24",
+      "description": "Electric constraint 24",
+      "expression": "hydro_generation(74)",
+      "slack": {
+        "enabled": true,
+        "penalty": 3180.98,
+        "penalty_basis": "per_hour"
+      }
+    },
+    {
+      "id": 14,
+      "name": "AGRINT_1",
+      "description": "Exchange group constraint 1",
+      "expression": "line_direct(1) + line_reverse(4)",
+      "slack": {
+        "enabled": false
+      }
+    },
+    {
+      "id": 15,
+      "name": "AGRINT_2",
+      "description": "Exchange group constraint 2",
+      "expression": "line_reverse(1) + line_direct(4)",
+      "slack": {
+        "enabled": false
+      }
+    },
+    {
+      "id": 16,
+      "name": "AGRINT_4",
+      "description": "Exchange group constraint 4",
+      "expression": "line_reverse(3) + line_reverse(4)",
+      "slack": {
+        "enabled": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/non_controllable_sources.schema.json",
+  "non_controllable_sources": [
+    {
+      "id": 0,
+      "name": "PCH_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 2968.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 1,
+      "name": "PCT_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 4762.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 2,
+      "name": "EOL_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 11.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 3,
+      "name": "UFV_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 2665.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 4,
+      "name": "PCH MMGD_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 31.55,
+      "allow_curtailment": false
+    },
+    {
+      "id": 5,
+      "name": "PCT MMGD_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 114.4,
+      "allow_curtailment": false
+    },
+    {
+      "id": 6,
+      "name": "EOL MMGD_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 0.09,
+      "allow_curtailment": false
+    },
+    {
+      "id": 7,
+      "name": "UFV MMGD_1",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 0,
+      "max_generation_mw": 5206.15,
+      "allow_curtailment": false
+    },
+    {
+      "id": 8,
+      "name": "PCH_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 1480.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 9,
+      "name": "PCT_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 543.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 10,
+      "name": "EOL_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 932.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 11,
+      "name": "UFV_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 7.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 12,
+      "name": "PCH MMGD_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 6.51,
+      "allow_curtailment": false
+    },
+    {
+      "id": 13,
+      "name": "PCT MMGD_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 50.44,
+      "allow_curtailment": false
+    },
+    {
+      "id": 14,
+      "name": "EOL MMGD_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 0.34,
+      "allow_curtailment": false
+    },
+    {
+      "id": 15,
+      "name": "UFV MMGD_2",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 1,
+      "max_generation_mw": 1964.08,
+      "allow_curtailment": false
+    },
+    {
+      "id": 16,
+      "name": "PCH_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 92.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 17,
+      "name": "PCT_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 488.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 18,
+      "name": "EOL_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 17636.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 19,
+      "name": "UFV_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 3612.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 20,
+      "name": "PCH MMGD_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 0.17,
+      "allow_curtailment": false
+    },
+    {
+      "id": 21,
+      "name": "PCT MMGD_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 13.93,
+      "allow_curtailment": false
+    },
+    {
+      "id": 22,
+      "name": "EOL MMGD_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 21.89,
+      "allow_curtailment": false
+    },
+    {
+      "id": 23,
+      "name": "UFV MMGD_3",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 2,
+      "max_generation_mw": 2199.25,
+      "allow_curtailment": false
+    },
+    {
+      "id": 24,
+      "name": "PCH_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 174.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 25,
+      "name": "PCT_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 237.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 26,
+      "name": "EOL_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 335.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 27,
+      "name": "UFV_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 2.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 28,
+      "name": "PCH MMGD_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 0.0,
+      "allow_curtailment": false
+    },
+    {
+      "id": 29,
+      "name": "PCT MMGD_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 3.41,
+      "allow_curtailment": false
+    },
+    {
+      "id": 30,
+      "name": "EOL MMGD_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 0.02,
+      "allow_curtailment": false
+    },
+    {
+      "id": 31,
+      "name": "UFV MMGD_4",
+      "operational_start_date": "1931-01-01",
+      "bus_id": 3,
+      "max_generation_mw": 852.84,
+      "allow_curtailment": false
+    }
+  ]
+}

@@ -1,0 +1,5189 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/load_factors.schema.json",
+  "load_factors": [
+    {
+      "bus_id": 0,
+      "stage_id": 0,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.081
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0717
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8875
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 1,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0805
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0665
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8931
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 2,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0771
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0688
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8854
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 3,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.103
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0814
+        },
+        {
+          "block_id": 2,
+          "factor": 0.884
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 4,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1309
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0785
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9273
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 5,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1498
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0765
+        },
+        {
+          "block_id": 2,
+          "factor": 0.921
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 6,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1417
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0772
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9181
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 7,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1267
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0757
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9273
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 8,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1104
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0852
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8701
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 9,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1027
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0779
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8852
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 10,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1126
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0652
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8913
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 11,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0904
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0636
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8852
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 12,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0931
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0706
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8907
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 13,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0826
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0657
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8931
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 14,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0782
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0669
+        },
+        {
+          "block_id": 2,
+          "factor": 0.887
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 15,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0982
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0793
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8811
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 16,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1365
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0802
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9253
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 17,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1494
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0756
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9187
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 18,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1474
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0775
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9198
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 19,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1281
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0766
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9237
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 20,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1129
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0835
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8708
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 21,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1114
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0777
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8885
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 22,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1106
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0651
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8847
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 23,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0895
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0627
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8789
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 24,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0931
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0703
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8839
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 25,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0836
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0647
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8915
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 26,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0759
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0655
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8825
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 27,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1183
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0795
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8933
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 28,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1284
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0772
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9232
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 29,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1548
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0764
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9203
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 30,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1579
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0799
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9194
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 31,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.126
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0756
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9221
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 32,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1187
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0825
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8769
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 33,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.113
+        },
+        {
+          "block_id": 1,
+          "factor": 1.077
+        },
+        {
+          "block_id": 2,
+          "factor": 0.882
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 34,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1156
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0645
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8908
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 35,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1001
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0628
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8961
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 36,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0931
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0703
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8839
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 37,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0836
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0647
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8915
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 38,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0759
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0655
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8825
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 39,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1183
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0795
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8933
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 40,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1284
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0772
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9232
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 41,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1548
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0764
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9203
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 42,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1579
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0799
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9194
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 43,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.126
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0756
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9221
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 44,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1187
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0825
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8769
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 45,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.113
+        },
+        {
+          "block_id": 1,
+          "factor": 1.077
+        },
+        {
+          "block_id": 2,
+          "factor": 0.882
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 46,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1156
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0645
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8908
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 47,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1001
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0628
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8961
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 48,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0931
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0703
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8839
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 49,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0836
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0647
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8915
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 50,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0759
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0655
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8825
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 51,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1183
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0795
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8933
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 52,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1284
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0772
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9232
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 53,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1548
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0764
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9203
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 54,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1579
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0799
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9194
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 55,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.126
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0756
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9221
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 56,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1187
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0825
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8769
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 57,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.113
+        },
+        {
+          "block_id": 1,
+          "factor": 1.077
+        },
+        {
+          "block_id": 2,
+          "factor": 0.882
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 58,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1156
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0645
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8908
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 59,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1001
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0628
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8961
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 60,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0931
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0703
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8839
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 61,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0836
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0647
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8915
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 62,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0759
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0655
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8825
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 63,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1183
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0795
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8933
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 64,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1284
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0772
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9232
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 65,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1548
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0764
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9203
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 66,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1579
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0799
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9194
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 67,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.126
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0756
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9221
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 68,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1187
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0825
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8769
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 69,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.113
+        },
+        {
+          "block_id": 1,
+          "factor": 1.077
+        },
+        {
+          "block_id": 2,
+          "factor": 0.882
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 70,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1156
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0645
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8908
+        }
+      ]
+    },
+    {
+      "bus_id": 0,
+      "stage_id": 71,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1001
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0628
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8961
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 0,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1005
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0963
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8525
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 1,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0902
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0893
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8641
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 2,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1105
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0904
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8451
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 3,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1424
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1044
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8472
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 4,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1892
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1039
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9014
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 5,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2015
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1008
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8953
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 6,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1902
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0973
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8947
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 7,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.196
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1063
+        },
+        {
+          "block_id": 2,
+          "factor": 0.895
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 8,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1615
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1102
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8242
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 9,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1557
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1033
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8401
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 10,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.15
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0835
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8586
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 11,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1043
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0812
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8586
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 12,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1143
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0966
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8556
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 13,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0926
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0884
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8641
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 14,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1073
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0852
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8525
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 15,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.134
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1021
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8437
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 16,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.196
+        },
+        {
+          "block_id": 1,
+          "factor": 1.107
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8983
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 17,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1977
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1001
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8924
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 18,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1992
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0976
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8968
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 19,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1941
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1064
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8913
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 20,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1655
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1089
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8238
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 21,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1704
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1045
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8425
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 22,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.146
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0831
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8507
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 23,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1004
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0812
+        },
+        {
+          "block_id": 2,
+          "factor": 0.851
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 24,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1128
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0961
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8475
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 25,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0937
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0871
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8621
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 26,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1055
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0861
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8425
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 27,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1666
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1019
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8584
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 28,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1812
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1023
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8964
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 29,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2054
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1005
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8949
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 30,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2157
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1014
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8953
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 31,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1866
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1028
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8913
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 32,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1737
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1074
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8323
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 33,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1717
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1031
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8338
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 34,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1538
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0824
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8582
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 35,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.118
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0806
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8706
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 36,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1128
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0961
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8475
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 37,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0937
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0871
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8621
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 38,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1055
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0861
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8425
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 39,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1666
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1019
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8584
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 40,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1812
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1023
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8964
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 41,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2054
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1005
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8949
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 42,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2157
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1014
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8953
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 43,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1866
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1028
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8913
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 44,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1737
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1074
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8323
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 45,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1717
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1031
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8338
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 46,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1538
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0824
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8582
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 47,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.118
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0806
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8706
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 48,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1128
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0961
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8475
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 49,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0937
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0871
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8621
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 50,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1055
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0861
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8425
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 51,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1666
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1019
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8584
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 52,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1812
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1023
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8964
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 53,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2054
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1005
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8949
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 54,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2157
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1014
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8953
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 55,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1866
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1028
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8913
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 56,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1737
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1074
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8323
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 57,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1717
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1031
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8338
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 58,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1538
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0824
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8582
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 59,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.118
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0806
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8706
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 60,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1128
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0961
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8475
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 61,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0937
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0871
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8621
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 62,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1055
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0861
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8425
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 63,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1666
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1019
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8584
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 64,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1812
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1023
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8964
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 65,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2054
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1005
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8949
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 66,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.2157
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1014
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8953
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 67,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1866
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1028
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8913
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 68,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1737
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1074
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8323
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 69,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1717
+        },
+        {
+          "block_id": 1,
+          "factor": 1.1031
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8338
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 70,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.1538
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0824
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8582
+        }
+      ]
+    },
+    {
+      "bus_id": 1,
+      "stage_id": 71,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.118
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0806
+        },
+        {
+          "block_id": 2,
+          "factor": 0.8706
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 0,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9978
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0702
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9246
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 1,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9932
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0733
+        },
+        {
+          "block_id": 2,
+          "factor": 0.923
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 2,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9947
+        },
+        {
+          "block_id": 1,
+          "factor": 1.072
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9199
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 3,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0271
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0757
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9187
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 4,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0146
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0553
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9602
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 5,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0157
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0541
+        },
+        {
+          "block_id": 2,
+          "factor": 0.959
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 6,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0209
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0493
+        },
+        {
+          "block_id": 2,
+          "factor": 0.96
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 7,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.009
+        },
+        {
+          "block_id": 1,
+          "factor": 1.051
+        },
+        {
+          "block_id": 2,
+          "factor": 0.963
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 8,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0212
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0753
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9173
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 9,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0157
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0718
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9256
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 10,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0141
+        },
+        {
+          "block_id": 1,
+          "factor": 1.07
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9237
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 11,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0172
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0672
+        },
+        {
+          "block_id": 2,
+          "factor": 0.915
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 12,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0062
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0686
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9268
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 13,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9976
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0717
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9229
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 14,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9989
+        },
+        {
+          "block_id": 1,
+          "factor": 1.071
+        },
+        {
+          "block_id": 2,
+          "factor": 0.919
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 15,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0268
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0744
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9158
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 16,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0219
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0571
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9579
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 17,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.018
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0549
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9568
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 18,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0274
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0494
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9601
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 19,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0122
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0524
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9604
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 20,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0263
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0727
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9177
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 21,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0241
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0695
+        },
+        {
+          "block_id": 2,
+          "factor": 0.928
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 22,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0166
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0702
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9181
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 23,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0201
+        },
+        {
+          "block_id": 1,
+          "factor": 1.065
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9112
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 24,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0099
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0681
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9217
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 25,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0011
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0702
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9216
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 26,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0003
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0677
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9178
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 27,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.043
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0708
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9254
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 28,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0188
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0559
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9568
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 29,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0256
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0546
+        },
+        {
+          "block_id": 2,
+          "factor": 0.957
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 30,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0371
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0515
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9582
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 31,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0143
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0524
+        },
+        {
+          "block_id": 2,
+          "factor": 0.959
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 32,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0332
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0688
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9228
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 33,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0289
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0683
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9237
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 34,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0233
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0678
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 35,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.031
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0633
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 36,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0099
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0681
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9217
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 37,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0011
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0702
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9216
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 38,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0003
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0677
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9178
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 39,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.043
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0708
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9254
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 40,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0188
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0559
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9568
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 41,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0256
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0546
+        },
+        {
+          "block_id": 2,
+          "factor": 0.957
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 42,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0371
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0515
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9582
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 43,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0143
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0524
+        },
+        {
+          "block_id": 2,
+          "factor": 0.959
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 44,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0332
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0688
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9228
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 45,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0289
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0683
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9237
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 46,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0233
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0678
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 47,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.031
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0633
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 48,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0099
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0681
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9217
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 49,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0011
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0702
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9216
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 50,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0003
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0677
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9178
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 51,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.043
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0708
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9254
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 52,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0188
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0559
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9568
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 53,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0256
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0546
+        },
+        {
+          "block_id": 2,
+          "factor": 0.957
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 54,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0371
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0515
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9582
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 55,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0143
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0524
+        },
+        {
+          "block_id": 2,
+          "factor": 0.959
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 56,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0332
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0688
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9228
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 57,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0289
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0683
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9237
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 58,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0233
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0678
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 59,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.031
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0633
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 60,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0099
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0681
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9217
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 61,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0011
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0702
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9216
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 62,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0003
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0677
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9178
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 63,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.043
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0708
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9254
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 64,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0188
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0559
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9568
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 65,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0256
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0546
+        },
+        {
+          "block_id": 2,
+          "factor": 0.957
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 66,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0371
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0515
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9582
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 67,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0143
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0524
+        },
+        {
+          "block_id": 2,
+          "factor": 0.959
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 68,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0332
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0688
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9228
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 69,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0289
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0683
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9237
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 70,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0233
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0678
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 2,
+      "stage_id": 71,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.031
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0633
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9225
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 0,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0154
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0413
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9485
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 1,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0198
+        },
+        {
+          "block_id": 1,
+          "factor": 1.045
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9425
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 2,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0145
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0462
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9402
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 3,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0337
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0446
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9453
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 4,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0107
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0428
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9693
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 5,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0061
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0438
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9679
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 6,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0004
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0399
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9706
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 7,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9954
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0429
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9707
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 8,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0157
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0509
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9435
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 9,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0202
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0442
+        },
+        {
+          "block_id": 2,
+          "factor": 0.95
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 10,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0198
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0464
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9455
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 11,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0158
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0425
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9439
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 12,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0183
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0422
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9493
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 13,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0211
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0444
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9427
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 14,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0162
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0453
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9405
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 15,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0304
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0443
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9438
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 16,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0136
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0437
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9682
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 17,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0065
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0438
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9669
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 18,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0039
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0391
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9713
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 19,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9963
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0441
+        },
+        {
+          "block_id": 2,
+          "factor": 0.969
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 20,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0169
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0501
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9438
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 21,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0237
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.952
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 22,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0203
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0463
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9421
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 23,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0146
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0416
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9423
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 24,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0185
+        },
+        {
+          "block_id": 1,
+          "factor": 1.042
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9464
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 25,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0213
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0438
+        },
+        {
+          "block_id": 2,
+          "factor": 0.942
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 26,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0148
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0439
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9394
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 27,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0421
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0429
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9496
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 28,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0106
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0428
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9675
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 29,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0098
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9676
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 30,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0089
+        },
+        {
+          "block_id": 1,
+          "factor": 1.04
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9707
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 31,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9957
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0437
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9686
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 32,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0198
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0477
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9477
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 33,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0242
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9493
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 34,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0232
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0455
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9451
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 35,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0206
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0407
+        },
+        {
+          "block_id": 2,
+          "factor": 0.95
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 36,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0185
+        },
+        {
+          "block_id": 1,
+          "factor": 1.042
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9464
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 37,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0213
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0438
+        },
+        {
+          "block_id": 2,
+          "factor": 0.942
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 38,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0148
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0439
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9394
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 39,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0421
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0429
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9496
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 40,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0106
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0428
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9675
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 41,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0098
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9676
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 42,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0089
+        },
+        {
+          "block_id": 1,
+          "factor": 1.04
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9707
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 43,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9957
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0437
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9686
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 44,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0198
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0477
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9477
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 45,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0242
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9493
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 46,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0232
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0455
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9451
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 47,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0206
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0407
+        },
+        {
+          "block_id": 2,
+          "factor": 0.95
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 48,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0185
+        },
+        {
+          "block_id": 1,
+          "factor": 1.042
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9464
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 49,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0213
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0438
+        },
+        {
+          "block_id": 2,
+          "factor": 0.942
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 50,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0148
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0439
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9394
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 51,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0421
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0429
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9496
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 52,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0106
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0428
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9675
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 53,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0098
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9676
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 54,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0089
+        },
+        {
+          "block_id": 1,
+          "factor": 1.04
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9707
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 55,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9957
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0437
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9686
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 56,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0198
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0477
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9477
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 57,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0242
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9493
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 58,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0232
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0455
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9451
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 59,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0206
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0407
+        },
+        {
+          "block_id": 2,
+          "factor": 0.95
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 60,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0185
+        },
+        {
+          "block_id": 1,
+          "factor": 1.042
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9464
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 61,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0213
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0438
+        },
+        {
+          "block_id": 2,
+          "factor": 0.942
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 62,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0148
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0439
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9394
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 63,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0421
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0429
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9496
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 64,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0106
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0428
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9675
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 65,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0098
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9676
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 66,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0089
+        },
+        {
+          "block_id": 1,
+          "factor": 1.04
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9707
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 67,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 0.9957
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0437
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9686
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 68,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0198
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0477
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9477
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 69,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0242
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0433
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9493
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 70,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0232
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0455
+        },
+        {
+          "block_id": 2,
+          "factor": 0.9451
+        }
+      ]
+    },
+    {
+      "bus_id": 3,
+      "stage_id": 71,
+      "block_factors": [
+        {
+          "block_id": 0,
+          "factor": 1.0206
+        },
+        {
+          "block_id": 1,
+          "factor": 1.0407
+        },
+        {
+          "block_id": 2,
+          "factor": 0.95
+        }
+      ]
+    }
+  ]
+}

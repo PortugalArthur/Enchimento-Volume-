@@ -1,0 +1,2879 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ons-ccee-epe/novomodelo/refs/heads/main/schemas/stages.schema.json",
+  "season_definitions": {
+    "cycle_type": "monthly",
+    "seasons": [
+      {
+        "id": 0,
+        "month_start": 1,
+        "label": "January"
+      },
+      {
+        "id": 1,
+        "month_start": 2,
+        "label": "February"
+      },
+      {
+        "id": 2,
+        "month_start": 3,
+        "label": "March"
+      },
+      {
+        "id": 3,
+        "month_start": 4,
+        "label": "April"
+      },
+      {
+        "id": 4,
+        "month_start": 5,
+        "label": "May"
+      },
+      {
+        "id": 5,
+        "month_start": 6,
+        "label": "June"
+      },
+      {
+        "id": 6,
+        "month_start": 7,
+        "label": "July"
+      },
+      {
+        "id": 7,
+        "month_start": 8,
+        "label": "August"
+      },
+      {
+        "id": 8,
+        "month_start": 9,
+        "label": "September"
+      },
+      {
+        "id": 9,
+        "month_start": 10,
+        "label": "October"
+      },
+      {
+        "id": 10,
+        "month_start": 11,
+        "label": "November"
+      },
+      {
+        "id": 11,
+        "month_start": 12,
+        "label": "December"
+      }
+    ]
+  },
+  "policy_graph": {
+    "type": "finite_horizon",
+    "annual_discount_rate": 0.12,
+    "transitions": [
+      {
+        "source_id": 0,
+        "target_id": 1,
+        "probability": 1.0
+      },
+      {
+        "source_id": 1,
+        "target_id": 2,
+        "probability": 1.0
+      },
+      {
+        "source_id": 2,
+        "target_id": 3,
+        "probability": 1.0
+      },
+      {
+        "source_id": 3,
+        "target_id": 4,
+        "probability": 1.0
+      },
+      {
+        "source_id": 4,
+        "target_id": 5,
+        "probability": 1.0
+      },
+      {
+        "source_id": 5,
+        "target_id": 6,
+        "probability": 1.0
+      },
+      {
+        "source_id": 6,
+        "target_id": 7,
+        "probability": 1.0
+      },
+      {
+        "source_id": 7,
+        "target_id": 8,
+        "probability": 1.0
+      },
+      {
+        "source_id": 8,
+        "target_id": 9,
+        "probability": 1.0
+      },
+      {
+        "source_id": 9,
+        "target_id": 10,
+        "probability": 1.0
+      },
+      {
+        "source_id": 10,
+        "target_id": 11,
+        "probability": 1.0
+      },
+      {
+        "source_id": 11,
+        "target_id": 12,
+        "probability": 1.0
+      },
+      {
+        "source_id": 12,
+        "target_id": 13,
+        "probability": 1.0
+      },
+      {
+        "source_id": 13,
+        "target_id": 14,
+        "probability": 1.0
+      },
+      {
+        "source_id": 14,
+        "target_id": 15,
+        "probability": 1.0
+      },
+      {
+        "source_id": 15,
+        "target_id": 16,
+        "probability": 1.0
+      },
+      {
+        "source_id": 16,
+        "target_id": 17,
+        "probability": 1.0
+      },
+      {
+        "source_id": 17,
+        "target_id": 18,
+        "probability": 1.0
+      },
+      {
+        "source_id": 18,
+        "target_id": 19,
+        "probability": 1.0
+      },
+      {
+        "source_id": 19,
+        "target_id": 20,
+        "probability": 1.0
+      },
+      {
+        "source_id": 20,
+        "target_id": 21,
+        "probability": 1.0
+      },
+      {
+        "source_id": 21,
+        "target_id": 22,
+        "probability": 1.0
+      },
+      {
+        "source_id": 22,
+        "target_id": 23,
+        "probability": 1.0
+      },
+      {
+        "source_id": 23,
+        "target_id": 24,
+        "probability": 1.0
+      },
+      {
+        "source_id": 24,
+        "target_id": 25,
+        "probability": 1.0
+      },
+      {
+        "source_id": 25,
+        "target_id": 26,
+        "probability": 1.0
+      },
+      {
+        "source_id": 26,
+        "target_id": 27,
+        "probability": 1.0
+      },
+      {
+        "source_id": 27,
+        "target_id": 28,
+        "probability": 1.0
+      },
+      {
+        "source_id": 28,
+        "target_id": 29,
+        "probability": 1.0
+      },
+      {
+        "source_id": 29,
+        "target_id": 30,
+        "probability": 1.0
+      },
+      {
+        "source_id": 30,
+        "target_id": 31,
+        "probability": 1.0
+      },
+      {
+        "source_id": 31,
+        "target_id": 32,
+        "probability": 1.0
+      },
+      {
+        "source_id": 32,
+        "target_id": 33,
+        "probability": 1.0
+      },
+      {
+        "source_id": 33,
+        "target_id": 34,
+        "probability": 1.0
+      },
+      {
+        "source_id": 34,
+        "target_id": 35,
+        "probability": 1.0
+      },
+      {
+        "source_id": 35,
+        "target_id": 36,
+        "probability": 1.0
+      },
+      {
+        "source_id": 36,
+        "target_id": 37,
+        "probability": 1.0
+      },
+      {
+        "source_id": 37,
+        "target_id": 38,
+        "probability": 1.0
+      },
+      {
+        "source_id": 38,
+        "target_id": 39,
+        "probability": 1.0
+      },
+      {
+        "source_id": 39,
+        "target_id": 40,
+        "probability": 1.0
+      },
+      {
+        "source_id": 40,
+        "target_id": 41,
+        "probability": 1.0
+      },
+      {
+        "source_id": 41,
+        "target_id": 42,
+        "probability": 1.0
+      },
+      {
+        "source_id": 42,
+        "target_id": 43,
+        "probability": 1.0
+      },
+      {
+        "source_id": 43,
+        "target_id": 44,
+        "probability": 1.0
+      },
+      {
+        "source_id": 44,
+        "target_id": 45,
+        "probability": 1.0
+      },
+      {
+        "source_id": 45,
+        "target_id": 46,
+        "probability": 1.0
+      },
+      {
+        "source_id": 46,
+        "target_id": 47,
+        "probability": 1.0
+      },
+      {
+        "source_id": 47,
+        "target_id": 48,
+        "probability": 1.0
+      },
+      {
+        "source_id": 48,
+        "target_id": 49,
+        "probability": 1.0
+      },
+      {
+        "source_id": 49,
+        "target_id": 50,
+        "probability": 1.0
+      },
+      {
+        "source_id": 50,
+        "target_id": 51,
+        "probability": 1.0
+      },
+      {
+        "source_id": 51,
+        "target_id": 52,
+        "probability": 1.0
+      },
+      {
+        "source_id": 52,
+        "target_id": 53,
+        "probability": 1.0
+      },
+      {
+        "source_id": 53,
+        "target_id": 54,
+        "probability": 1.0
+      },
+      {
+        "source_id": 54,
+        "target_id": 55,
+        "probability": 1.0
+      },
+      {
+        "source_id": 55,
+        "target_id": 56,
+        "probability": 1.0
+      },
+      {
+        "source_id": 56,
+        "target_id": 57,
+        "probability": 1.0
+      },
+      {
+        "source_id": 57,
+        "target_id": 58,
+        "probability": 1.0
+      },
+      {
+        "source_id": 58,
+        "target_id": 59,
+        "probability": 1.0
+      },
+      {
+        "source_id": 59,
+        "target_id": 60,
+        "probability": 1.0
+      },
+      {
+        "source_id": 60,
+        "target_id": 61,
+        "probability": 1.0
+      },
+      {
+        "source_id": 61,
+        "target_id": 62,
+        "probability": 1.0
+      },
+      {
+        "source_id": 62,
+        "target_id": 63,
+        "probability": 1.0
+      },
+      {
+        "source_id": 63,
+        "target_id": 64,
+        "probability": 1.0
+      },
+      {
+        "source_id": 64,
+        "target_id": 65,
+        "probability": 1.0
+      },
+      {
+        "source_id": 65,
+        "target_id": 66,
+        "probability": 1.0
+      },
+      {
+        "source_id": 66,
+        "target_id": 67,
+        "probability": 1.0
+      },
+      {
+        "source_id": 67,
+        "target_id": 68,
+        "probability": 1.0
+      },
+      {
+        "source_id": 68,
+        "target_id": 69,
+        "probability": 1.0
+      },
+      {
+        "source_id": 69,
+        "target_id": 70,
+        "probability": 1.0
+      },
+      {
+        "source_id": 70,
+        "target_id": 71,
+        "probability": 1.0
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": 0,
+      "start_date": "2026-01-01",
+      "end_date": "2026-02-01",
+      "season_id": 0,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 322.0032
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 295.9632
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 1,
+      "start_date": "2026-02-01",
+      "end_date": "2026-03-01",
+      "season_id": 1,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 113.9712
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 290.976
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 267.0528
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 2,
+      "start_date": "2026-03-01",
+      "end_date": "2026-04-01",
+      "season_id": 2,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 131.9856
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 326.988
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 285.0264
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 3,
+      "start_date": "2026-04-01",
+      "end_date": "2026-05-01",
+      "season_id": 3,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.024
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 290.016
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 309.96
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 4,
+      "start_date": "2026-05-01",
+      "end_date": "2026-06-01",
+      "season_id": 4,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 59.9664
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 276.9912
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 407.0424
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 5,
+      "start_date": "2026-06-01",
+      "end_date": "2026-07-01",
+      "season_id": 5,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 273.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 383.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 6,
+      "start_date": "2026-07-01",
+      "end_date": "2026-08-01",
+      "season_id": 6,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 68.9688
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 285.9936
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 389.0376
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 7,
+      "start_date": "2026-08-01",
+      "end_date": "2026-09-01",
+      "season_id": 7,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0168
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 279.9672
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 401.016
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 8,
+      "start_date": "2026-09-01",
+      "end_date": "2026-10-01",
+      "season_id": 8,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 293.976
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 300.024
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 9,
+      "start_date": "2026-10-01",
+      "end_date": "2026-11-01",
+      "season_id": 9,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 301.0224
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 316.944
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 10,
+      "start_date": "2026-11-01",
+      "end_date": "2026-12-01",
+      "season_id": 10,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 113.976
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 304.992
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 301.032
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 11,
+      "start_date": "2026-12-01",
+      "end_date": "2027-01-01",
+      "season_id": 11,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 131.9856
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 326.988
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 285.0264
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 12,
+      "start_date": "2027-01-01",
+      "end_date": "2027-02-01",
+      "season_id": 0,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.0072
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 317.0184
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 306.9744
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 13,
+      "start_date": "2027-02-01",
+      "end_date": "2027-03-01",
+      "season_id": 1,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 113.9712
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 290.976
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 267.0528
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 14,
+      "start_date": "2027-03-01",
+      "end_date": "2027-04-01",
+      "season_id": 2,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 131.9856
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 326.988
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 285.0264
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 15,
+      "start_date": "2027-04-01",
+      "end_date": "2027-05-01",
+      "season_id": 3,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 293.976
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 300.024
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 16,
+      "start_date": "2027-05-01",
+      "end_date": "2027-06-01",
+      "season_id": 4,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 59.9664
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 276.9912
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 407.0424
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 17,
+      "start_date": "2027-06-01",
+      "end_date": "2027-07-01",
+      "season_id": 5,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 66.024
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 275.976
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 378.0
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 18,
+      "start_date": "2027-07-01",
+      "end_date": "2027-08-01",
+      "season_id": 6,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 65.9928
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 283.0176
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 394.9896
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 19,
+      "start_date": "2027-08-01",
+      "end_date": "2027-09-01",
+      "season_id": 7,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 65.9928
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 283.0176
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 394.9896
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 20,
+      "start_date": "2027-09-01",
+      "end_date": "2027-10-01",
+      "season_id": 8,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 293.976
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 300.024
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 21,
+      "start_date": "2027-10-01",
+      "end_date": "2027-11-01",
+      "season_id": 9,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.0072
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 297.0048
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 326.988
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 22,
+      "start_date": "2027-11-01",
+      "end_date": "2027-12-01",
+      "season_id": 10,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.024
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 310.032
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 289.944
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 23,
+      "start_date": "2027-12-01",
+      "end_date": "2028-01-01",
+      "season_id": 11,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 138.012
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 331.9728
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 274.0152
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 24,
+      "start_date": "2028-01-01",
+      "end_date": "2028-02-01",
+      "season_id": 0,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 322.0032
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 295.9632
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 25,
+      "start_date": "2028-02-01",
+      "end_date": "2028-03-01",
+      "season_id": 1,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 119.9904
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 302.9688
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 273.0408
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 26,
+      "start_date": "2028-03-01",
+      "end_date": "2028-04-01",
+      "season_id": 2,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 138.012
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 331.9728
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 274.0152
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 27,
+      "start_date": "2028-04-01",
+      "end_date": "2028-05-01",
+      "season_id": 3,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 108.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 282.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 329.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 28,
+      "start_date": "2028-05-01",
+      "end_date": "2028-06-01",
+      "season_id": 4,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 65.9928
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 283.0176
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 394.9896
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 29,
+      "start_date": "2028-06-01",
+      "end_date": "2028-07-01",
+      "season_id": 5,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 273.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 383.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 30,
+      "start_date": "2028-07-01",
+      "end_date": "2028-08-01",
+      "season_id": 6,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0168
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 279.9672
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 401.016
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 31,
+      "start_date": "2028-08-01",
+      "end_date": "2028-09-01",
+      "season_id": 7,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 68.9688
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 285.9936
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 389.0376
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 32,
+      "start_date": "2028-09-01",
+      "end_date": "2028-10-01",
+      "season_id": 8,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.024
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 290.016
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 309.96
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 33,
+      "start_date": "2028-10-01",
+      "end_date": "2028-11-01",
+      "season_id": 9,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 301.0224
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 316.944
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 34,
+      "start_date": "2028-11-01",
+      "end_date": "2028-12-01",
+      "season_id": 10,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 113.976
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 304.992
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 301.032
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 35,
+      "start_date": "2028-12-01",
+      "end_date": "2029-01-01",
+      "season_id": 11,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.0072
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 317.0184
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 306.9744
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 36,
+      "start_date": "2029-01-01",
+      "end_date": "2029-02-01",
+      "season_id": 0,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 322.0032
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 295.9632
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 37,
+      "start_date": "2029-02-01",
+      "end_date": "2029-03-01",
+      "season_id": 1,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 115.8528
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 292.5216
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 263.6256
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 38,
+      "start_date": "2029-03-01",
+      "end_date": "2029-04-01",
+      "season_id": 2,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 138.012
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 331.9728
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 274.0152
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 39,
+      "start_date": "2029-04-01",
+      "end_date": "2029-05-01",
+      "season_id": 3,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 108.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 282.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 329.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 40,
+      "start_date": "2029-05-01",
+      "end_date": "2029-06-01",
+      "season_id": 4,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 65.9928
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 283.0176
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 394.9896
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 41,
+      "start_date": "2029-06-01",
+      "end_date": "2029-07-01",
+      "season_id": 5,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 273.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 383.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 42,
+      "start_date": "2029-07-01",
+      "end_date": "2029-08-01",
+      "season_id": 6,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0168
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 279.9672
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 401.016
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 43,
+      "start_date": "2029-08-01",
+      "end_date": "2029-09-01",
+      "season_id": 7,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 68.9688
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 285.9936
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 389.0376
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 44,
+      "start_date": "2029-09-01",
+      "end_date": "2029-10-01",
+      "season_id": 8,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.024
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 290.016
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 309.96
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 45,
+      "start_date": "2029-10-01",
+      "end_date": "2029-11-01",
+      "season_id": 9,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 301.0224
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 316.944
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 46,
+      "start_date": "2029-11-01",
+      "end_date": "2029-12-01",
+      "season_id": 10,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 113.976
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 304.992
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 301.032
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 47,
+      "start_date": "2029-12-01",
+      "end_date": "2030-01-01",
+      "season_id": 11,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.0072
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 317.0184
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 306.9744
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 48,
+      "start_date": "2030-01-01",
+      "end_date": "2030-02-01",
+      "season_id": 0,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 322.0032
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 295.9632
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 49,
+      "start_date": "2030-02-01",
+      "end_date": "2030-03-01",
+      "season_id": 1,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 115.8528
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 292.5216
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 263.6256
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 50,
+      "start_date": "2030-03-01",
+      "end_date": "2030-04-01",
+      "season_id": 2,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 138.012
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 331.9728
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 274.0152
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 51,
+      "start_date": "2030-04-01",
+      "end_date": "2030-05-01",
+      "season_id": 3,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 108.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 282.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 329.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 52,
+      "start_date": "2030-05-01",
+      "end_date": "2030-06-01",
+      "season_id": 4,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 65.9928
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 283.0176
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 394.9896
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 53,
+      "start_date": "2030-06-01",
+      "end_date": "2030-07-01",
+      "season_id": 5,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 273.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 383.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 54,
+      "start_date": "2030-07-01",
+      "end_date": "2030-08-01",
+      "season_id": 6,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0168
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 279.9672
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 401.016
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 55,
+      "start_date": "2030-08-01",
+      "end_date": "2030-09-01",
+      "season_id": 7,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 68.9688
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 285.9936
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 389.0376
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 56,
+      "start_date": "2030-09-01",
+      "end_date": "2030-10-01",
+      "season_id": 8,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.024
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 290.016
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 309.96
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 57,
+      "start_date": "2030-10-01",
+      "end_date": "2030-11-01",
+      "season_id": 9,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 301.0224
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 316.944
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 58,
+      "start_date": "2030-11-01",
+      "end_date": "2030-12-01",
+      "season_id": 10,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 113.976
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 304.992
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 301.032
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 59,
+      "start_date": "2030-12-01",
+      "end_date": "2031-01-01",
+      "season_id": 11,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.0072
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 317.0184
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 306.9744
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 60,
+      "start_date": "2031-01-01",
+      "end_date": "2031-02-01",
+      "season_id": 0,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 322.0032
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 295.9632
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 61,
+      "start_date": "2031-02-01",
+      "end_date": "2031-03-01",
+      "season_id": 1,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 115.8528
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 292.5216
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 263.6256
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 62,
+      "start_date": "2031-03-01",
+      "end_date": "2031-04-01",
+      "season_id": 2,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 138.012
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 331.9728
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 274.0152
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 63,
+      "start_date": "2031-04-01",
+      "end_date": "2031-05-01",
+      "season_id": 3,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 108.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 282.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 329.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 64,
+      "start_date": "2031-05-01",
+      "end_date": "2031-06-01",
+      "season_id": 4,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 65.9928
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 283.0176
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 394.9896
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 65,
+      "start_date": "2031-06-01",
+      "end_date": "2031-07-01",
+      "season_id": 5,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 273.024
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 383.976
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 66,
+      "start_date": "2031-07-01",
+      "end_date": "2031-08-01",
+      "season_id": 6,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 63.0168
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 279.9672
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 401.016
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 67,
+      "start_date": "2031-08-01",
+      "end_date": "2031-09-01",
+      "season_id": 7,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 68.9688
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 285.9936
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 389.0376
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 68,
+      "start_date": "2031-09-01",
+      "end_date": "2031-10-01",
+      "season_id": 8,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.024
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 290.016
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 309.96
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 69,
+      "start_date": "2031-10-01",
+      "end_date": "2031-11-01",
+      "season_id": 9,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 126.0336
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 301.0224
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 316.944
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 70,
+      "start_date": "2031-11-01",
+      "end_date": "2031-12-01",
+      "season_id": 10,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 113.976
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 304.992
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 301.032
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    },
+    {
+      "id": 71,
+      "start_date": "2031-12-01",
+      "end_date": "2032-01-01",
+      "season_id": 11,
+      "blocks": [
+        {
+          "id": 0,
+          "name": "HEAVY",
+          "hours": 120.0072
+        },
+        {
+          "id": 1,
+          "name": "MEDIUM",
+          "hours": 317.0184
+        },
+        {
+          "id": 2,
+          "name": "LIGHT",
+          "hours": 306.9744
+        }
+      ],
+      "num_openings": 20,
+      "risk_measure": {
+        "cvar": {
+          "alpha": 0.15,
+          "lambda": 0.4
+        }
+      },
+      "state_variables": {
+        "storage": true,
+        "inflow_lags": true
+      }
+    }
+  ]
+}
