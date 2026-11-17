@@ -2,6 +2,15 @@
 
 Execute **EXTRAIR_HYDROS_USINA.bat** com duplo clique. O programa prepara as bibliotecas ausentes na primeira execução, seguindo o padrão dos outros programas da pasta Vazoes.
 
+No Windows, o lançador procura Python 3.10 ou mais recente com Tkinter pelo launcher `py`, pelo PATH, pelo registro e pelas pastas usuais de instalação. Para indicar uma instalação personalizada, execute no Prompt de Comando:
+
+```bat
+set "EXTRATOR_PYTHON=C:\caminho\Python312\python.exe"
+EXTRAIR_HYDROS_USINA.bat
+```
+
+Se nenhuma instalação compatível for encontrada, instale o Python com os componentes launcher e Tcl/Tk habilitados.
+
 ## Seleção e saída
 
 1. Escolha a pasta `hydros`, contendo `scenario_id=.../data.parquet`.
