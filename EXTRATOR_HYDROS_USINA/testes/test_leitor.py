@@ -7,7 +7,9 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from dados.leitor import Consolidado
+from dados.leitor import Consolidado, unidade
+from dados.extrator import CAMPOS_ADICIONAIS
+from testes import test_extrator as fixtures
 
 
 class TestLeitor(unittest.TestCase):
@@ -75,6 +77,24 @@ class TestLeitor(unittest.TestCase):
         self.assertEqual(len(base.resumo('agua_de_montante_m3s')), 72)
         self.assertEqual(len(base.filtrar(0)), 72)
         self.assertEqual(len(base.filtrar(estagio=0)), 2000)
+
+    def test_leitor_exibe_e_exporta_os_15_campos_com_unidades(self):
+        fixture = fixtures.TestExtrator()
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        fixture.rodar()
+        base = Consolidado.abrir(fixture.saida)
+        self.assertTrue(set(CAMPOS_ADICIONAIS).issubset(base.metricas))
+        self.assertEqual(unidade('storage_final_hm3'), 'hm³')
+        self.assertEqual(unidade('generation_slack_mw'), 'MW')
+        self.assertEqual(unidade('evaporation_m3s'), 'm³/s')
+        self.assertEqual(base.resumo('storage_initial_hm3', 0).loc[4, 'media'], 10044)
+        self.assertEqual(base.resumo('generation_slack_mw', 0).loc[4, 'media'], 23)
+        destino = self.raiz / 'novos.csv'
+        base.exportar(destino, 0, 4)
+        dados = pd.read_csv(destino, sep=';', decimal=',')
+        self.assertTrue(set(CAMPOS_ADICIONAIS).issubset(dados.columns))
+        self.assertEqual(dados.storage_final_hm3.iloc[0], 9044)
 
 
 if __name__ == '__main__':

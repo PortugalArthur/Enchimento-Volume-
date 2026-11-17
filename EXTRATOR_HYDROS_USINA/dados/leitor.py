@@ -17,7 +17,30 @@ ROTULOS = {
     'agua_montante_turbinada_m3s': 'Montante — turbinada',
     'agua_montante_vertida_m3s': 'Montante — vertida',
     'inflow_nonnegativity_slack_m3s': 'Slack de não negatividade',
+    'evaporation_m3s': 'Evaporação',
+    'diverted_inflow_m3s': 'Vazão de desvio recebida',
+    'diverted_outflow_m3s': 'Vazão de desvio enviada',
+    'storage_initial_hm3': 'Volume armazenado inicial',
+    'storage_final_hm3': 'Volume armazenado final',
+    'turbined_slack_m3s': 'Slack de turbinamento',
+    'outflow_slack_below_m3s': 'Slack de defluência abaixo do limite',
+    'outflow_slack_above_m3s': 'Slack de defluência acima do limite',
+    'generation_slack_mw': 'Slack de geração',
+    'storage_violation_below_hm3': 'Violação do armazenamento mínimo',
+    'filling_target_violation_hm3': 'Violação da meta de enchimento',
+    'evaporation_violation_pos_m3s': 'Violação positiva de evaporação',
+    'evaporation_violation_neg_m3s': 'Violação negativa de evaporação',
+    'water_withdrawal_violation_pos_m3s': 'Violação positiva de retirada de água',
+    'water_withdrawal_violation_neg_m3s': 'Violação negativa de retirada de água',
 }
+
+
+def unidade(coluna):
+    if coluna.endswith('_hm3'):
+        return 'hm³'
+    if coluna.endswith('_mw'):
+        return 'MW'
+    return 'm³/s'
 
 
 def rotulo(coluna):
@@ -52,7 +75,7 @@ class Consolidado:
         metricas = [c for c in ROTULOS if c in df]
         metricas += [c for c in df if c.startswith('agua_montante_uhe_') and c.endswith('_m3s')]
         if not metricas:
-            raise ValueError('Não foram encontradas colunas de vazão reconhecidas.')
+            raise ValueError('Não foram encontradas grandezas reconhecidas.')
         for c in metricas:
             if not pd.api.types.is_numeric_dtype(df[c]) or not np.isfinite(df[c]).all():
                 raise ValueError(f'A coluna {c} contém valores ausentes, não numéricos ou não finitos.')

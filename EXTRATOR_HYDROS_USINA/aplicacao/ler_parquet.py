@@ -16,7 +16,7 @@ garantir_dependencias({'numpy': 'numpy>=1.24', 'pandas': 'pandas>=2.0',
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 from matplotlib.ticker import MaxNLocator
-from dados.leitor import Consolidado, rotulo
+from dados.leitor import Consolidado, rotulo, unidade
 
 
 TODOS = 'Todos'
@@ -53,7 +53,7 @@ class Leitor(ttk.Frame):
         filtros.pack(fill='x', pady=12)
         self.cenario = self.combo(filtros, 'Cenário', 14)
         self.estagio = self.combo(filtros, 'Estágio', 14)
-        self.metrica = self.combo(filtros, 'Grandeza (m³/s)', 38)
+        self.metrica = self.combo(filtros, 'Grandeza e unidade', 48)
         self.contagem = tk.StringVar()
         ttk.Label(self, textvariable=self.contagem).pack(anchor='w', pady=(0, 8))
 
@@ -151,12 +151,12 @@ class Leitor(ttk.Frame):
         for combo, coluna in [(self.cenario, 'scenario_id'), (self.estagio, 'stage_id')]:
             combo.configure(values=[TODOS] + [str(v) for v in sorted(df[coluna].unique())], state='readonly')
             combo.set(TODOS)
-        self.metrica.configure(values=[rotulo(c) for c in base.metricas], state='readonly')
+        self.metrica.configure(values=[f'{rotulo(c)} ({unidade(c)})' for c in base.metricas], state='readonly')
         self.metrica.current(0)
         self.exportar_botao.configure(state='normal')
         self.meta.configure(state='normal')
         self.meta.delete('1.0', 'end')
-        self.meta.insert('end', 'Os IDs são os originais. Vazões em m³/s; não são volumes acumulados.\n'
+        self.meta.insert('end', 'Os IDs são os originais. Vazões em m³/s, volumes em hm³ e potência em MW.\n'
                          'P10 e P90 são percentis empíricos entre cenários, não probabilidades de excedência.\n'
                          'O fim de cada estágio é exclusivo. Nenhum arquivo de origem é alterado.\n\n'
                          + (json.dumps(base.metadados, ensure_ascii=False, indent=2) if base.metadados
@@ -173,9 +173,10 @@ class Leitor(ttk.Frame):
         self.pagina = 0
         cenario, estagio = self.filtros()
         metrica = self.base.metricas[self.metrica.current()]
+        medida = unidade(metrica)
         self.filtrados = self.base.filtrar(cenario, estagio)
         df = self.filtrados
-        self.contagem.set(f'{len(df):,} observações no filtro | média: {df[metrica].mean():,.3f} m³/s'
+        self.contagem.set(f'{len(df):,} observações no filtro | média: {df[metrica].mean():,.3f} {medida}'
                           if len(df) else 'Nenhuma observação neste filtro.')
         eixo, canvas = self.figuras[0]
         eixo.clear()
@@ -189,7 +190,7 @@ class Leitor(ttk.Frame):
         elif len(df):
             eixo.plot(df.stage_id, df[metrica], color='#1d4ed8', marker='o', markersize=4, label=f'Cenário {cenario}')
             eixo.legend(loc='best')
-        eixo.set(title=rotulo(metrica), xlabel='Estágio (ID original)', ylabel='Vazão (m³/s)')
+        eixo.set(title=rotulo(metrica), xlabel='Estágio (ID original)', ylabel=f'{rotulo(metrica)} ({medida})')
         eixo.xaxis.set_major_locator(MaxNLocator(integer=True))
         eixo.grid(alpha=.2)
         canvas.draw_idle()
@@ -197,7 +198,7 @@ class Leitor(ttk.Frame):
         eixo.clear()
         if len(df):
             eixo.hist(df[metrica], bins=min(40, max(1, int(len(df) ** .5))), color='#0f766e', edgecolor='white')
-        eixo.set(title=f'{rotulo(metrica)} — observações do filtro', xlabel='Vazão (m³/s)', ylabel='Número de observações')
+        eixo.set(title=f'{rotulo(metrica)} — observações do filtro', xlabel=f'{rotulo(metrica)} ({medida})', ylabel='Número de observações')
         eixo.grid(axis='y', alpha=.2)
         canvas.draw_idle()
         self.atualizar_tabela()
@@ -215,7 +216,7 @@ class Leitor(ttk.Frame):
         self.tabela.configure(columns=list(df.columns))
         for coluna in df:
             self.tabela.heading(coluna, text=coluna)
-            self.tabela.column(coluna, width=180 if coluna.endswith('_m3s') else 120, stretch=False)
+            self.tabela.column(coluna, width=180 if coluna.endswith(('_m3s', '_hm3', '_mw')) else 120, stretch=False)
         inicio = self.pagina * TAMANHO_PAGINA
         for linha in df.iloc[inicio:inicio + TAMANHO_PAGINA].itertuples(index=False, name=None):
             self.tabela.insert('', 'end', values=[f'{v:.4f}' if isinstance(v, float) else str(v) for v in linha])

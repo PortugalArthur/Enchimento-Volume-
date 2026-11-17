@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
-from dados.extrator import (CHAVE, carregar_deck, consolidar, consolidar_cenario,
+from dados.extrator import (CAMPOS_ADICIONAIS, VOLUMES_ADICIONAIS, CHAVE, carregar_deck, consolidar, consolidar_cenario,
                            encontrar_cenarios, validar_selecao)
 
 
@@ -35,7 +35,16 @@ class TestExtrator(unittest.TestCase):
                         q, v = {10: ([10, 20], [2, 4]), 20: ([5, 9], [1, 3])}.get(hid, ([100, 200], [0, 0]))
                         linhas.append(dict(scenario_id=c, stage_id=s, node_id=s+100+c, hydro_id=hid, block_id=b,
                                            turbined_m3s=q[b]+c, spillage_m3s=v[b], incremental_inflow_m3s=1000+hid+s+c,
-                                           inflow_nonnegativity_slack_m3s=float(b+4)))
+                                           inflow_nonnegativity_slack_m3s=float(b+4),
+                                           evaporation_m3s=hid+10+20*b, diverted_inflow_m3s=2+4*b,
+                                           diverted_outflow_m3s=1+2*b, storage_initial_hm3=10000+hid+s+c,
+                                           storage_final_hm3=9000+hid+s+c, turbined_slack_m3s=3+4*b,
+                                           outflow_slack_below_m3s=5+8*b, outflow_slack_above_m3s=7+12*b,
+                                           generation_slack_mw=11+16*b, storage_violation_below_hm3=.25,
+                                           filling_target_violation_hm3=.5, evaporation_violation_pos_m3s=.1+.2*b,
+                                           evaporation_violation_neg_m3s=.2+.4*b,
+                                           water_withdrawal_violation_pos_m3s=.3+.6*b,
+                                           water_withdrawal_violation_neg_m3s=.4+.8*b))
             path=self.hydros/f'scenario_id={c:04d}'/'data.parquet'
             path.parent.mkdir(parents=True)
             pd.DataFrame(linhas).sample(frac=1, random_state=3).to_parquet(path, index=False)
@@ -87,6 +96,62 @@ class TestExtrator(unittest.TestCase):
         df=self.cenario([10])
         self.assertEqual(df.agua_de_montante_m3s.tolist(),[21,15])
 
+    def test_novos_campos_ponderam_taxas_e_preservam_volumes_da_usina(self):
+        self.rodar()
+        df = pq.ParquetFile(self.saida).read().to_pandas()
+        linha = df[(df.stage_id == 4) & (df.scenario_id == 0)].iloc[0]
+        esperados = dict(evaporation_m3s=65, diverted_inflow_m3s=5, diverted_outflow_m3s=2.5,
+                         storage_initial_hm3=10044, storage_final_hm3=9044, turbined_slack_m3s=6,
+                         outflow_slack_below_m3s=11, outflow_slack_above_m3s=16, generation_slack_mw=23,
+                         storage_violation_below_hm3=.25, filling_target_violation_hm3=.5,
+                         evaporation_violation_pos_m3s=.25, evaporation_violation_neg_m3s=.5,
+                         water_withdrawal_violation_pos_m3s=.75, water_withdrawal_violation_neg_m3s=1)
+        self.assertEqual(set(esperados), set(CAMPOS_ADICIONAIS))
+        for campo, valor in esperados.items():
+            with self.subTest(campo=campo):
+                self.assertAlmostEqual(linha[campo], valor)
+        outra = df[(df.stage_id == 9) & (df.scenario_id == 0)].iloc[0]
+        self.assertAlmostEqual(outra.evaporation_m3s, 55)
+        self.assertAlmostEqual(outra.generation_slack_mw, 15)
+        meta = json.loads(pq.read_metadata(self.saida).metadata[b'extrator_hydros'])
+        self.assertEqual(meta['versao'], 2)
+        self.assertEqual(meta['unidades_por_coluna']['storage_initial_hm3'], 'hm3')
+        self.assertEqual(meta['unidades_por_coluna']['generation_slack_mw'], 'MW')
+        self.assertEqual(meta['unidades_por_coluna']['evaporation_m3s'], 'm3/s')
+
+    def test_novos_campos_sem_patamares_sao_copiados(self):
+        self.alterar(lambda df: df[df.block_id == 0].assign(block_id=np.nan))
+        original = pq.ParquetFile(self.arquivo).read().to_pandas()
+        esperado = original[original.hydro_id == 40].set_index('stage_id')[CAMPOS_ADICIONAIS].sort_index()
+        obtido = self.cenario().set_index('stage_id')[CAMPOS_ADICIONAIS]
+        pd.testing.assert_frame_equal(obtido, esperado)
+
+    def test_volume_divergente_entre_patamares_e_rejeitado(self):
+        original = self.arquivo.read_bytes()
+        for coluna in VOLUMES_ADICIONAIS:
+            with self.subTest(coluna=coluna):
+                self.arquivo.write_bytes(original)
+                self.alterar(lambda df: df.assign(**{coluna: df[coluna]+df.block_id}))
+                with self.assertRaisesRegex(ValueError, coluna + ' diverge'):
+                    self.cenario()
+
+    def test_novos_campos_nao_aceitam_nao_finitos(self):
+        original = self.arquivo.read_bytes()
+        for coluna in CAMPOS_ADICIONAIS:
+            with self.subTest(coluna=coluna):
+                self.arquivo.write_bytes(original)
+                self.alterar(lambda df: df.assign(**{coluna: np.where(df.hydro_id == 40, np.nan, df[coluna])}))
+                with self.assertRaisesRegex(ValueError, coluna):
+                    self.cenario()
+
+    def test_campo_novo_ausente_preserva_saida_anterior(self):
+        self.rodar()
+        anterior = self.saida.read_bytes()
+        self.alterar(lambda df: df.drop(columns=['storage_initial_hm3']))
+        with self.assertRaisesRegex(ValueError, 'colunas ausentes.*storage_initial_hm3'):
+            self.rodar(sobrescrever=True)
+        self.assertEqual(self.saida.read_bytes(), anterior)
+
     def test_rejeita_ancestral_e_usina_analisada(self):
         for ids in [[5],[40],[10,10],[99]]:
             with self.subTest(ids=ids), self.assertRaises(ValueError):
@@ -132,9 +197,13 @@ class TestExtrator(unittest.TestCase):
             resumo=df[df.block_id==0].copy()
             resumo['block_id']=np.nan
             resumo['turbined_m3s']=99999
+            resumo['evaporation_m3s']=99999
+            resumo['storage_initial_hm3']=99999
             return pd.concat([df,resumo])
         self.alterar(adicionar)
         self.assertAlmostEqual(self.cenario().iloc[0].agua_de_montante_m3s,31.5)
+        self.assertAlmostEqual(self.cenario().iloc[0].evaporation_m3s,65)
+        self.assertEqual(self.cenario().iloc[0].storage_initial_hm3,10044)
 
     def test_linha_de_estagio_sem_patamares(self):
         self.alterar(lambda df:df[df.block_id==0].assign(block_id=np.nan))

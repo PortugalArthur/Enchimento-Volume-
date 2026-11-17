@@ -23,7 +23,7 @@ Abra **LER_PARQUET_HYDROS.bat** com duplo clique e clique em **Abrir Parquet…*
 - **Metadados e origem:** usina, montantes, seleção parcial, fórmula e informações da geração.
 - **Exportar filtro para CSV…:** exporta todas as linhas e colunas filtradas, independentemente da página atual, com separador `;`, vírgula decimal e codificação UTF-8 para Excel. Escolha um nome novo; arquivos existentes são preservados.
 
-As vazões são apresentadas em m³/s, não em volume acumulado. P10 e P90 são percentis empíricos, não probabilidades de excedência. Na barra abaixo dos gráficos é possível ampliar, mover e salvar imagens. O arquivo é carregado na memória; para arquivos maiores que a memória disponível, gere consolidados menores.
+As vazões são apresentadas em m³/s, os volumes em hm³ e o slack de geração em MW. A unidade da grandeza selecionada aparece no seletor, no resumo e nos eixos dos gráficos. P10 e P90 são percentis empíricos, não probabilidades de excedência. Na barra abaixo dos gráficos é possível ampliar, mover e salvar imagens. O arquivo é carregado na memória; para arquivos maiores que a memória disponível, gere consolidados menores. Consolidados antigos continuam abrindo, com as colunas que já possuem.
 
 Também é possível abrir diretamente pelo terminal, na pasta do programa:
 
@@ -76,6 +76,34 @@ As seis primeiras seguem a base do consolidado existente:
 | `agua_montante_uhe_ID_m3s` | Contribuição total individual de cada montante selecionada |
 | `agua_de_montante_m3s` | Soma das contribuições das montantes selecionadas, em m³/s |
 | `nome_usina`, `data_inicio`, `data_fim` | Nome e calendário do estágio, com fim exclusivo |
+
+### Campos adicionais da usina analisada
+
+As novas extrações incluem os 15 campos abaixo, com os nomes originais. Eles descrevem somente a usina analisada; não são somados aos valores das montantes e não alteram o cálculo de `agua_de_montante_m3s`.
+
+| Campo | Unidade | Tratamento por estágio |
+| --- | --- | --- |
+| `evaporation_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `diverted_inflow_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `diverted_outflow_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `storage_initial_hm3` | hm³ | Volume inicial do estágio, preservado uma única vez |
+| `storage_final_hm3` | hm³ | Volume final do estágio, preservado uma única vez |
+| `turbined_slack_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `outflow_slack_below_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `outflow_slack_above_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `generation_slack_mw` | MW | Média ponderada pelas horas dos patamares |
+| `storage_violation_below_hm3` | hm³ | Valor do estágio, preservado uma única vez |
+| `filling_target_violation_hm3` | hm³ | Valor do estágio, preservado uma única vez |
+| `evaporation_violation_pos_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `evaporation_violation_neg_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `water_withdrawal_violation_pos_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+| `water_withdrawal_violation_neg_m3s` | m³/s | Média ponderada pelas horas dos patamares |
+
+Os quatro campos em hm³ devem ser iguais entre os patamares de um mesmo cenário, estágio e nó. O extrator verifica isso antes de copiar o valor do patamar 0; não soma nem faz média dos volumes. Para taxas repetidas entre patamares, a média mantém o mesmo valor, dentro da precisão numérica. Para arquivos contendo apenas linhas de estágio (`block_id` nulo), todos os 15 campos são copiados diretamente.
+
+As 15 colunas são obrigatórias nas entradas das novas extrações. Campos ausentes ou valores não numéricos/não finitos da usina analisada interrompem a geração sem substituir a saída anterior; o extrator não preenche dados ausentes com zero. Os metadados `extrator_hydros` passam à versão 2 e registram `unidades_por_coluna` e `tratamento_campos_adicionais`. `unidade` passa a indicar unidades mistas; consulte o mapa por coluna.
+
+**Para obter esses campos em um consolidado já gerado, execute novamente o extrator a partir dos Parquets originais.** O leitor não consegue recuperar colunas descartadas de uma saída antiga. O exemplo histórico de FURNAS incluído no repositório permanece sem esses novos campos.
 
 O arquivo é específico para a análise de uma usina e não carrega os parâmetros PAR do avaliador estatístico. A seleção, fórmula, cenários, caminhos e hashes dos cadastros ficam incorporados nos metadados Parquet na chave `extrator_hydros`.
 

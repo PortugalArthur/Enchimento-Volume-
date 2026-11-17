@@ -21,7 +21,39 @@ TEMPO = ['scenario_id', 'stage_id', 'node_id']
 VAZOES = ['turbined_m3s', 'spillage_m3s']
 INCREMENTAL = 'incremental_inflow_m3s'
 SLACK = 'inflow_nonnegativity_slack_m3s'
-COLUNAS = CHAVE + ['block_id', INCREMENTAL, SLACK] + VAZOES
+TAXAS_ADICIONAIS = [
+    'evaporation_m3s', 'diverted_inflow_m3s', 'diverted_outflow_m3s',
+    'turbined_slack_m3s', 'outflow_slack_below_m3s', 'outflow_slack_above_m3s',
+    'generation_slack_mw', 'evaporation_violation_pos_m3s',
+    'evaporation_violation_neg_m3s', 'water_withdrawal_violation_pos_m3s',
+    'water_withdrawal_violation_neg_m3s',
+]
+VOLUMES_ADICIONAIS = [
+    'storage_initial_hm3', 'storage_final_hm3',
+    'storage_violation_below_hm3', 'filling_target_violation_hm3',
+]
+CAMPOS_ADICIONAIS = TAXAS_ADICIONAIS + VOLUMES_ADICIONAIS
+COLUNAS = CHAVE + ['block_id', INCREMENTAL, SLACK] + VAZOES + CAMPOS_ADICIONAIS
+
+
+def _consolidar_campos_adicionais(dados, usina, deck):
+    """Taxas viram médias temporais; volumes de estágio são copiados sem soma."""
+    alvo = dados.loc[dados.hydro_id.eq(usina)]
+    for coluna in CAMPOS_ADICIONAIS:
+        if not pd.api.types.is_numeric_dtype(alvo[coluna]) or not np.isfinite(alvo[coluna]).all():
+            raise ValueError(f'Valor ausente, não numérico ou não finito em {coluna} da UHE {usina}.')
+    blocos = alvo.loc[alvo.block_id.notna()]
+    if blocos.empty:
+        return alvo[CHAVE + CAMPOS_ADICIONAIS].copy()
+    for coluna in VOLUMES_ADICIONAIS:
+        if not blocos.groupby(CHAVE, sort=False)[coluna].nunique().eq(1).all():
+            raise ValueError(f'{coluna} diverge entre patamares da UHE {usina}; '
+                             'não é possível preservar um único volume por estágio.')
+    volumes = blocos.loc[blocos.block_id.eq(0), CHAVE + VOLUMES_ADICIONAIS]
+    ponderados = blocos.merge(deck.pesos, on=['stage_id', 'block_id'], validate='m:1')
+    ponderados[TAXAS_ADICIONAIS] = ponderados[TAXAS_ADICIONAIS].mul(ponderados.peso, axis=0)
+    medias = ponderados.groupby(CHAVE, sort=False, as_index=False)[TAXAS_ADICIONAIS].sum()
+    return volumes.merge(medias, on=CHAVE, validate='1:1')
 
 
 @dataclass
@@ -179,6 +211,8 @@ def consolidar_cenario(arquivo: Path, numero: int, deck: Deck, usina: int,
             raise ValueError(f'Cenário {numero}: block_id=0 ausente para a vazão incremental e o slack.')
     resultado = base.loc[base.hydro_id.eq(usina)].merge(
         medias.loc[medias.hydro_id.eq(usina)], on=CHAVE, validate='1:1')
+    adicionais = _consolidar_campos_adicionais(dados, usina, deck)
+    resultado = resultado.merge(adicionais, on=CHAVE, validate='1:1')
     resultado['outflow_m3s'] = resultado['turbined_m3s'] + resultado['spillage_m3s']
     resultado['agua_montante_turbinada_m3s'] = 0.0
     resultado['agua_montante_vertida_m3s'] = 0.0
@@ -237,13 +271,22 @@ def consolidar(pasta_hydros: Path | str, pasta_deck: Path | str, usina: int,
     if resultado.duplicated(['stage_id', 'scenario_id']).any() or not resultado.groupby('stage_id').size().eq(len(cenarios)).all():
         raise ValueError('Quantidade de cenários por estágio inconsistente.')
     metadados = dict(
-        versao=1, pasta_hydros=str(Path(pasta_hydros).resolve()), pasta_deck=str(deck.pasta),
+        versao=2, pasta_hydros=str(Path(pasta_hydros).resolve()), pasta_deck=str(deck.pasta),
         hydro_id=usina, nome_usina=deck.usinas[usina]['name'],
         montantes_selecionadas=[dict(hydro_id=i, nome=deck.usinas[i]['name']) for i in sorted(montantes)],
         montantes_diretas=deck.montantes_diretas(usina),
         selecao_completa=set(montantes) == set(deck.montantes_diretas(usina)),
         numero_cenarios=len(cenarios), scenario_ids=list(cenarios), numero_estagios=len(estagios_referencia),
-        linhas=len(resultado), unidade='m3/s', indices='IDs originais, sem renumerar',
+        linhas=len(resultado), unidade='mista; consultar unidades_por_coluna',
+        unidades_por_coluna={c: ('hm3' if c.endswith('_hm3') else 'MW' if c.endswith('_mw') else 'm3/s')
+                            for c in resultado if c.endswith(('_m3s', '_hm3', '_mw'))},
+        tratamento_campos_adicionais={
+            'escopo': 'Somente a usina analisada; não soma valores das montantes.',
+            'media_ponderada_pelas_horas': TAXAS_ADICIONAIS,
+            'volume_unico_por_estagio': VOLUMES_ADICIONAIS,
+            'sem_patamares': 'Copia os valores da linha de estágio.',
+        },
+        indices='IDs originais, sem renumerar',
         formula='sum_u sum_b [(turbined_m3s + spillage_m3s) * hours_b / sum_b(hours_b)]',
         escopo='Soma das montantes diretas selecionadas no mesmo cenário, estágio e nó. Sem adicionar slack, desvios, perdas ou tempo de viagem.',
         sha256={n: hashlib.sha256((deck.pasta/n).read_bytes()).hexdigest() for n in ['stages.json', 'system/hydros.json']},
