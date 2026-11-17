@@ -1,0 +1,65 @@
+{
+  "arquivo": "C:\\Users\\Pichau\\Desktop\\ONS\\Vazoes\\EXTRATOR_HYDROS_USINA\\outputs\\validacao_furnas_v20_2000_cenarios.parquet",
+  "usina": "FURNAS",
+  "linhas": 144000,
+  "estagios": 72,
+  "cenarios_por_estagio": 2000,
+  "chaves_unicas": true,
+  "contas_independentes": 9,
+  "amostras": [
+    {
+      "scenario_id": 0,
+      "stage_id": 0,
+      "node_id": 0,
+      "agua_de_montante_m3s": 489.84768786178466
+    },
+    {
+      "scenario_id": 0,
+      "stage_id": 36,
+      "node_id": 36,
+      "agua_de_montante_m3s": 418.75833915125
+    },
+    {
+      "scenario_id": 0,
+      "stage_id": 71,
+      "node_id": 71,
+      "agua_de_montante_m3s": 492.1311146626197
+    },
+    {
+      "scenario_id": 1000,
+      "stage_id": 0,
+      "node_id": 0,
+      "agua_de_montante_m3s": 59.22090806747908
+    },
+    {
+      "scenario_id": 1000,
+      "stage_id": 36,
+      "node_id": 36,
+      "agua_de_montante_m3s": 244.05425684915855
+    },
+    {
+      "scenario_id": 1000,
+      "stage_id": 71,
+      "node_id": 71,
+      "agua_de_montante_m3s": 354.48195612223265
+    },
+    {
+      "scenario_id": 1999,
+      "stage_id": 0,
+      "node_id": 0,
+      "agua_de_montante_m3s": 297.55434534808575
+    },
+    {
+      "scenario_id": 1999,
+      "stage_id": 36,
+      "node_id": 36,
+      "agua_de_montante_m3s": 376.41490464520336
+    },
+    {
+      "scenario_id": 1999,
+      "stage_id": 71,
+      "node_id": 71,
+      "agua_de_montante_m3s": 519.9047892186464
+    }
+  ]
+}
