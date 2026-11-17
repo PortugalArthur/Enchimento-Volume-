@@ -13,6 +13,26 @@ Se nenhuma instalação compatível for encontrada, instale o Python com os comp
 
 ## Seleção e saída
 
+### Visualizar o Parquet gerado
+
+Abra **LER_PARQUET_HYDROS.bat** com duplo clique e clique em **Abrir Parquet…**. O leitor instala as bibliotecas ausentes na primeira execução e abre os consolidados sem precisar do deck ou dos Parquets brutos.
+
+- **Evolução por estágio:** escolha a grandeza e consulte a média, mediana e faixa P10–P90 entre cenários. Selecione um cenário para ver sua trajetória individual. O eixo usa os IDs originais dos estágios; as datas estão na tabela.
+- **Distribuição:** histograma de todas as observações do filtro. Para comparar cenários em um mesmo período, escolha um estágio.
+- **Tabela:** todas as colunas, com páginas de 200 linhas e rolagem horizontal.
+- **Metadados e origem:** usina, montantes, seleção parcial, fórmula e informações da geração.
+- **Exportar filtro para CSV…:** exporta todas as linhas e colunas filtradas, independentemente da página atual, com separador `;`, vírgula decimal e codificação UTF-8 para Excel. Escolha um nome novo; arquivos existentes são preservados.
+
+As vazões são apresentadas em m³/s, não em volume acumulado. P10 e P90 são percentis empíricos, não probabilidades de excedência. Na barra abaixo dos gráficos é possível ampliar, mover e salvar imagens. O arquivo é carregado na memória; para arquivos maiores que a memória disponível, gere consolidados menores.
+
+Também é possível abrir diretamente pelo terminal, na pasta do programa:
+
+```powershell
+python -m aplicacao.ler_parquet outputs/validacao_furnas_v20_2000_cenarios.parquet
+```
+
+### Gerar um consolidado
+
 1. Escolha a pasta `hydros`, contendo `scenario_id=.../data.parquet`.
 2. Escolha a raiz do **deck de entrada da mesma execução**. São necessários `stages.json` e `system/hydros.json`.
 3. Busque a usina pelo nome ou ID e selecione-a.
