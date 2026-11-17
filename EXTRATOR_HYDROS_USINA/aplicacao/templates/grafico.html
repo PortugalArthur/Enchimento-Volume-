@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>HYDROS — volumes por cenário</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#17243b;font:15px system-ui,sans-serif}
+main{max-width:1600px;margin:auto;padding:24px}h1{font-size:26px;margin:4px 0 8px}p{line-height:1.5}
+.muted{color:#53647c}.card{background:white;border:1px solid #dce4ef;border-radius:12px;padding:18px;margin:16px 0}
+.controls{display:flex;gap:22px;align-items:center;flex-wrap:wrap}select,button{font:inherit;border:1px solid #b7c5d8;border-radius:6px;padding:8px;background:white;color:inherit}
+label{cursor:pointer}#scenario{min-width:160px}#chart{height:65vh;min-height:420px}.series{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
+.serie{display:flex;gap:10px;align-items:center;padding:8px;background:#f7f9fc;border-radius:6px}.serie label{flex:1}input[type=color]{width:38px;height:30px;padding:1px;border:1px solid #c7d2e2;background:white;border-radius:4px}
+.warning{color:#92400e;background:#fff7df;padding:10px;border-radius:6px}summary{cursor:pointer;font-weight:600}#status{min-height:24px}button:hover{background:#edf3ff}
+</style>
+<main>
+<div class="muted">HYDROS · análise de volumes</div>
+<h1 id="title">Preparando gráfico...</h1>
+<div id="source" class="muted"></div>
+<p id="partial" class="warning" hidden>A afluente considera apenas as montantes selecionadas na extração: a contribuição de montante é parcial.</p>
+<section class="card">
+ <div class="controls"><label for="scenario">Cenário <select id="scenario" disabled></select></label>
+ <span id="count" class="muted"></span><button id="show" disabled>Mostrar todas</button><button id="hide" disabled>Ocultar todas</button></div>
+ <div id="series" class="series"></div>
+</section>
+<section class="card"><div id="status" role="status">Carregando os dados incluídos neste HTML...</div><div id="chart" aria-label="Gráfico de linhas dos volumes por estágio"></div></section>
+<details class="card"><summary>Composição e unidades das séries</summary>
+ <p>Todas as curvas usam <strong>hm³</strong>. Cada vazão média já ponderada pelos patamares foi multiplicada pelas horas do estágio e por <strong>0,0036</strong>. Não há nova soma ou média de patamares.</p>
+ <p><strong>Vazão afluente (expressa como volume do estágio)</strong> = (montante turbinada + montante vertida + afluência incremental local + correção de não negatividade local) × horas × 0,0036.</p>
+ <p>A meta é o <strong>armazenamento absoluto exigido</strong> no estágio; as demais vazões convertidas são volumes do período. A meta e a folga de enchimento já estavam em hm³ e não foram convertidas novamente. Meta nula fora do enchimento aparece como interrupção da linha, não zero.</p>
+ <p>Retirada programada e evaporação preservam o sinal do Parquet. A folga de retirada para menos é exibida com seu valor original convertido, sem inverter o sinal. A afluente definida aqui não inclui desvios, bombeamento nem afluências encaminhadas de locais em pré-enchimento. Este gráfico não representa sozinho o fechamento completo do balanço.</p>
+ <p>Selecione um único cenário. Use as caixas para exibir/ocultar curvas e os seletores de cor para personalizá-las. A legenda também permite ocultar curvas. As escolhas permanecem ao trocar de cenário nesta sessão. Use a barra do gráfico para zoom, restaurar a escala e salvar uma imagem.</p>
+</details>
+</main>
+<script>__PLOTLY_JS__</script>
+<script id="payload" type="application/octet-stream">__DADOS_COMPACTADOS__</script>
+<script>
+'use strict';
+(async function(){
+ const status=document.getElementById('status');
+ try {
+  const bytes=Uint8Array.from(atob(document.getElementById('payload').textContent.trim()),c=>c.charCodeAt(0));
+  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  const data=JSON.parse(await new Response(stream).text());
+  document.getElementById('title').textContent=data.nome+' · volumes por estágio';
+  document.title=data.nome+' — HYDROS';
+  document.getElementById('source').textContent=data.arquivo+' · UHE '+data.hydro_id+' · '+Object.keys(data.cenarios).length+' cenários';
+  document.getElementById('partial').hidden=!data.parcial;
+  const select=document.getElementById('scenario'), chart=document.getElementById('chart');
+  const colors=data.definicoes.map(s=>s[1]), visible=data.definicoes.map(()=>true), checks=[];
+  for(const cid of Object.keys(data.cenarios)){const o=document.createElement('option');o.value=cid;o.textContent=cid;select.append(o)}
+  select.value=data.cenario_inicial;
+  data.definicoes.forEach((s,i)=>{
+   const box=document.createElement('div');box.className='serie';
+   const check=document.createElement('input');check.type='checkbox';check.checked=true;check.id='visible-'+i;
+   const label=document.createElement('label');label.htmlFor=check.id;label.textContent=s[0];
+   const color=document.createElement('input');color.type='color';color.value=colors[i];color.id='color-'+i;color.setAttribute('aria-label','Cor: '+s[0]);
+   check.addEventListener('change',()=>{visible[i]=check.checked;Plotly.restyle(chart,{visible:visible[i]?true:'legendonly'},[i])});
+   color.addEventListener('input',()=>{colors[i]=color.value;Plotly.restyle(chart,{'line.color':colors[i]},[i])});
+   box.append(check,label,color);document.getElementById('series').append(box);checks.push(check);
+  });
+  function traces(){const d=data.cenarios[select.value];return data.definicoes.map((s,i)=>({
+   type:'scatter',mode:'lines+markers',name:s[0],x:d.estagios,y:d.series[i],customdata:d.datas,
+   line:{color:colors[i],width:i===3?3:2,dash:i===3?'dash':'solid'},marker:{size:4},connectgaps:false,
+   visible:visible[i]?true:'legendonly',hovertemplate:'Estágio %{x} · %{customdata}<br>%{y:.6f} hm³<extra>%{fullData.name}</extra>'
+  }))}
+  const layout={paper_bgcolor:'white',plot_bgcolor:'white',margin:{t:30,r:25,b:110,l:85},
+   font:{family:'system-ui, sans-serif',color:'#17243b'},xaxis:{title:{text:'Estágio (ID original)'},showgrid:true,gridcolor:'#e7edf5',tickformat:'d'},
+   yaxis:{title:{text:'Volume (hm³)'},gridcolor:'#e7edf5',zerolinecolor:'#94a3b8'},hovermode:'x unified',
+   legend:{orientation:'h',y:-0.2,x:0},uirevision:'initial'};
+  function inform(){const d=data.cenarios[select.value];document.getElementById('count').textContent=d.estagios.length+' estágios · todas as curvas em hm³';
+   status.textContent='Cenário '+select.value+' · um cenário por vez · passe o cursor para consultar os valores.'}
+  await Plotly.newPlot(chart,traces(),layout,{responsive:true,displaylogo:false,toImageButtonOptions:{filename:'hydros_volumes',format:'png',scale:2}});
+  inform();
+  select.addEventListener('change',async()=>{await Plotly.react(chart,traces(),{...layout,uirevision:select.value},{responsive:true,displaylogo:false});inform()});
+  chart.on('plotly_restyle',()=>{chart.data.forEach((t,i)=>{visible[i]=t.visible!==false&&t.visible!=='legendonly';checks[i].checked=visible[i]})});
+  for(const [id,value] of [['show',true],['hide',false]])document.getElementById(id).addEventListener('click',()=>{
+   visible.fill(value);checks.forEach(c=>c.checked=value);Plotly.restyle(chart,{visible:value?true:'legendonly'})});
+  select.disabled=false;document.getElementById('show').disabled=false;document.getElementById('hide').disabled=false;
+ } catch(error) {status.textContent='Não foi possível abrir o gráfico. Use uma versão atual do Edge, Chrome ou Firefox. Detalhe: '+error.message;}
+})();
+</script>
+</html>

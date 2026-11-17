@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import queue
 import threading
+import webbrowser
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from tkinter.font import nametofont
@@ -11,13 +12,14 @@ from tkinter.font import nametofont
 from infraestrutura.preparar_ambiente import garantir_dependencias
 
 garantir_dependencias({'numpy': 'numpy>=1.24', 'pandas': 'pandas>=2.0',
-                      'pyarrow': 'pyarrow>=14', 'matplotlib': 'matplotlib>=3.8'})
+                      'pyarrow': 'pyarrow>=14', 'matplotlib': 'matplotlib>=3.8', 'plotly': 'plotly>=5.18'})
 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 from matplotlib.ticker import MaxNLocator
 import pandas as pd
 from dados.leitor import Consolidado, rotulo, unidade
+from dados.grafico_html import gerar_html
 
 
 TODOS = 'Todos'
@@ -39,12 +41,15 @@ class Leitor(ttk.Frame):
         self.base = None
         self.pagina = 0
         self.fila = queue.Queue()
+        self.fila_html = queue.Queue()
         topo = ttk.Frame(self)
         topo.pack(fill='x')
         self.abrir_botao = ttk.Button(topo, text='Abrir Parquet...', command=self.escolher)
         self.abrir_botao.pack(side='left')
         self.exportar_botao = ttk.Button(topo, text='Exportar filtro para CSV...', command=self.exportar, state='disabled')
         self.exportar_botao.pack(side='left', padx=8)
+        self.html_botao = ttk.Button(topo, text='Gerar HTML interativo...', command=self.exportar_html, state='disabled')
+        self.html_botao.pack(side='left')
         self.arquivo = tk.StringVar(value='Abra um Parquet gerado pelo extrator para começar.')
         ttk.Label(self, textvariable=self.arquivo, wraplength=1080).pack(anchor='w', pady=8)
         self.informacoes = tk.StringVar()
@@ -137,6 +142,17 @@ class Leitor(ttk.Frame):
                 self.definir_base(base)
         except queue.Empty:
             pass
+        try:
+            destino, erro = self.fila_html.get_nowait()
+            self.html_botao.configure(state='normal')
+            if erro:
+                messagebox.showerror('Falha ao gerar HTML', erro, parent=self)
+                self.status.set('HTML não gerado. Confira o erro informado.')
+            else:
+                self.status.set(f'HTML gerado: {destino}')
+                webbrowser.open(destino.resolve().as_uri())
+        except queue.Empty:
+            pass
         self.after(100, self.verificar_fila)
 
     def definir_base(self, base):
@@ -155,6 +171,7 @@ class Leitor(ttk.Frame):
         self.metrica.configure(values=[f'{rotulo(c)} ({unidade(c)})' for c in base.metricas], state='readonly')
         self.metrica.current(0)
         self.exportar_botao.configure(state='normal')
+        self.html_botao.configure(state='normal')
         self.meta.configure(state='normal')
         self.meta.delete('1.0', 'end')
         self.meta.insert('end', 'Os IDs são os originais. Vazões em m³/s, volumes em hm³ e potência em MW.\n'
@@ -231,6 +248,24 @@ class Leitor(ttk.Frame):
         self.paginacao.set(f'Página {self.pagina + 1} de {paginas} | até {TAMANHO_PAGINA} linhas por página')
         self.anterior.configure(state='normal' if self.pagina else 'disabled')
         self.proxima.configure(state='normal' if self.pagina + 1 < paginas else 'disabled')
+
+    def exportar_html(self):
+        destino = filedialog.asksaveasfilename(parent=self, title='Salvar HTML com todos os cenários e estágios',
+                                              initialfile=self.base.caminho.stem + '_grafico.html',
+                                              defaultextension='.html', filetypes=[('HTML', '*.html')])
+        if not destino:
+            return
+        base = self.base
+        cenario = None if self.cenario.get() == TODOS else int(self.cenario.get())
+        self.html_botao.configure(state='disabled')
+        self.status.set('Gerando HTML com todos os cenários e estágios...')
+
+        def executar():
+            try:
+                self.fila_html.put((gerar_html(base, destino, cenario), None))
+            except Exception as erro:
+                self.fila_html.put((None, str(erro)))
+        threading.Thread(target=executar, daemon=True).start()
 
     def exportar(self):
         destino = filedialog.asksaveasfilename(parent=self, title='Exportar todas as linhas do filtro',
