@@ -16,6 +16,7 @@ garantir_dependencias({'numpy': 'numpy>=1.24', 'pandas': 'pandas>=2.0',
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 from matplotlib.ticker import MaxNLocator
+import pandas as pd
 from dados.leitor import Consolidado, rotulo, unidade
 
 
@@ -157,6 +158,7 @@ class Leitor(ttk.Frame):
         self.meta.configure(state='normal')
         self.meta.delete('1.0', 'end')
         self.meta.insert('end', 'Os IDs são os originais. Vazões em m³/s, volumes em hm³ e potência em MW.\n'
+                         'Metas e volumes de referência nulos significam: fora do período de enchimento.\n'
                          'P10 e P90 são percentis empíricos entre cenários, não probabilidades de excedência.\n'
                          'O fim de cada estágio é exclusivo. Nenhum arquivo de origem é alterado.\n\n'
                          + (json.dumps(base.metadados, ensure_ascii=False, indent=2) if base.metadados
@@ -176,18 +178,23 @@ class Leitor(ttk.Frame):
         medida = unidade(metrica)
         self.filtrados = self.base.filtrar(cenario, estagio)
         df = self.filtrados
-        self.contagem.set(f'{len(df):,} observações no filtro | média: {df[metrica].mean():,.3f} {medida}'
-                          if len(df) else 'Nenhuma observação neste filtro.')
+        valores = df[metrica].dropna()
+        if len(valores):
+            self.contagem.set(f'{len(df):,} linhas no filtro | {len(valores):,} valores aplicáveis | '
+                              f'média: {valores.mean():,.3f} {medida}')
+        else:
+            self.contagem.set('Grandeza sem valores aplicáveis neste filtro.' if len(df)
+                              else 'Nenhuma observação neste filtro.')
         eixo, canvas = self.figuras[0]
         eixo.clear()
         resumo = self.base.resumo(metrica, cenario, estagio)
-        if cenario is None and len(resumo):
+        if cenario is None and len(valores):
             x = resumo.index.to_numpy()
             eixo.fill_between(x, resumo.p10.to_numpy(), resumo.p90.to_numpy(), color='#3b82f6', alpha=.18, label='P10–P90')
             eixo.plot(x, resumo.media, color='#1d4ed8', marker='.', label='Média')
             eixo.plot(x, resumo.mediana, color='#0f766e', linestyle='--', label='Mediana (P50)')
             eixo.legend(loc='best')
-        elif len(df):
+        elif len(valores):
             eixo.plot(df.stage_id, df[metrica], color='#1d4ed8', marker='o', markersize=4, label=f'Cenário {cenario}')
             eixo.legend(loc='best')
         eixo.set(title=rotulo(metrica), xlabel='Estágio (ID original)', ylabel=f'{rotulo(metrica)} ({medida})')
@@ -196,8 +203,8 @@ class Leitor(ttk.Frame):
         canvas.draw_idle()
         eixo, canvas = self.figuras[1]
         eixo.clear()
-        if len(df):
-            eixo.hist(df[metrica], bins=min(40, max(1, int(len(df) ** .5))), color='#0f766e', edgecolor='white')
+        if len(valores):
+            eixo.hist(valores, bins=min(40, max(1, int(len(valores) ** .5))), color='#0f766e', edgecolor='white')
         eixo.set(title=f'{rotulo(metrica)} — observações do filtro', xlabel=f'{rotulo(metrica)} ({medida})', ylabel='Número de observações')
         eixo.grid(axis='y', alpha=.2)
         canvas.draw_idle()
@@ -219,7 +226,8 @@ class Leitor(ttk.Frame):
             self.tabela.column(coluna, width=180 if coluna.endswith(('_m3s', '_hm3', '_mw')) else 120, stretch=False)
         inicio = self.pagina * TAMANHO_PAGINA
         for linha in df.iloc[inicio:inicio + TAMANHO_PAGINA].itertuples(index=False, name=None):
-            self.tabela.insert('', 'end', values=[f'{v:.4f}' if isinstance(v, float) else str(v) for v in linha])
+            self.tabela.insert('', 'end', values=['N/A' if pd.isna(v) else f'{v:.4f}' if isinstance(v, float)
+                                                 else str(v) for v in linha])
         self.paginacao.set(f'Página {self.pagina + 1} de {paginas} | até {TAMANHO_PAGINA} linhas por página')
         self.anterior.configure(state='normal' if self.pagina else 'disabled')
         self.proxima.configure(state='normal' if self.pagina + 1 < paginas else 'disabled')

@@ -16,6 +16,8 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 
+from dados.planejamento import ARQUIVO_LIMITES, FONTE_META, carregar_planejamento
+
 CHAVE = ['scenario_id', 'stage_id', 'node_id', 'hydro_id']
 TEMPO = ['scenario_id', 'stage_id', 'node_id']
 VAZOES = ['turbined_m3s', 'spillage_m3s']
@@ -62,6 +64,7 @@ class Deck:
     usinas: dict[int, dict]
     estagios: dict[int, dict]
     pesos: pd.DataFrame
+    planejamento: pd.DataFrame
 
     def montantes_diretas(self, usina: int) -> list[int]:
         return sorted(i for i, h in self.usinas.items() if h.get('downstream_id') == usina)
@@ -112,12 +115,15 @@ def carregar_deck(pasta: Path | str) -> Deck:
             ids.add(bid)
             horas.append(float(duracao))
         total = sum(horas)
+        if not np.isfinite(total):
+            raise ValueError(f'Duração total não finita no estágio {sid}.')
         for b, horas_bloco in zip(s['blocks'], horas):
             pesos.append(dict(stage_id=sid, block_id=b['id'], peso=horas_bloco/total))
         estagios[sid] = dict(s, horas=total)
     if not usinas or not estagios:
         raise ValueError('Cadastro de usinas ou estágios vazio.')
-    return Deck(pasta, usinas, estagios, pd.DataFrame(pesos))
+    planejamento = carregar_planejamento(pasta, usinas, estagios)
+    return Deck(pasta, usinas, estagios, pd.DataFrame(pesos), planejamento)
 
 
 def encontrar_cenarios(pasta: Path | str) -> dict[int, Path]:
@@ -228,6 +234,9 @@ def consolidar_cenario(arquivo: Path, numero: int, deck: Deck, usina: int,
     resultado['nome_usina'] = deck.usinas[usina]['name']
     resultado['data_inicio'] = resultado.stage_id.map(lambda sid: date.fromisoformat(deck.estagios[sid]['start_date']))
     resultado['data_fim'] = resultado.stage_id.map(lambda sid: date.fromisoformat(deck.estagios[sid]['end_date']))
+    resultado = resultado.merge(deck.planejamento, on=['hydro_id', 'stage_id'], how='left', validate='m:1')
+    resultado['variacao_armazenamento_hm3'] = resultado.storage_final_hm3 - resultado.storage_initial_hm3
+    resultado['deficit_meta_enchimento_hm3'] = (resultado.filling_target_hm3 - resultado.storage_final_hm3).clip(lower=0)
     return resultado.sort_values(['stage_id', 'scenario_id']).reset_index(drop=True)
 
 
@@ -271,15 +280,16 @@ def consolidar(pasta_hydros: Path | str, pasta_deck: Path | str, usina: int,
     if resultado.duplicated(['stage_id', 'scenario_id']).any() or not resultado.groupby('stage_id').size().eq(len(cenarios)).all():
         raise ValueError('Quantidade de cenários por estágio inconsistente.')
     metadados = dict(
-        versao=2, pasta_hydros=str(Path(pasta_hydros).resolve()), pasta_deck=str(deck.pasta),
+        versao=3, pasta_hydros=str(Path(pasta_hydros).resolve()), pasta_deck=str(deck.pasta),
         hydro_id=usina, nome_usina=deck.usinas[usina]['name'],
         montantes_selecionadas=[dict(hydro_id=i, nome=deck.usinas[i]['name']) for i in sorted(montantes)],
         montantes_diretas=deck.montantes_diretas(usina),
         selecao_completa=set(montantes) == set(deck.montantes_diretas(usina)),
         numero_cenarios=len(cenarios), scenario_ids=list(cenarios), numero_estagios=len(estagios_referencia),
         linhas=len(resultado), unidade='mista; consultar unidades_por_coluna',
-        unidades_por_coluna={c: ('hm3' if c.endswith('_hm3') else 'MW' if c.endswith('_mw') else 'm3/s')
-                            for c in resultado if c.endswith(('_m3s', '_hm3', '_mw'))},
+        unidades_por_coluna={c: ('h' if c == 'horas_estagio' else 'hm3' if c.endswith('_hm3')
+                                else 'MW' if c.endswith('_mw') else 'm3/s')
+                            for c in resultado if c.endswith(('_m3s', '_hm3', '_mw')) or c == 'horas_estagio'},
         tratamento_campos_adicionais={
             'escopo': 'Somente a usina analisada; não soma valores das montantes.',
             'media_ponderada_pelas_horas': TAXAS_ADICIONAIS,
@@ -287,9 +297,20 @@ def consolidar(pasta_hydros: Path | str, pasta_deck: Path | str, usina: int,
             'sem_patamares': 'Copia os valores da linha de estágio.',
         },
         indices='IDs originais, sem renumerar',
+        planejamento={
+            'fonte_meta': FONTE_META,
+            'hydro_bounds_presente': (deck.pasta/ARQUIVO_LIMITES).is_file(),
+            'overrides': 'Por UHE, estágio e coluna; nulos/ausentes usam o padrão, sem propagar o mês anterior.',
+            'retirada': 'Programada, com sinal; não é a retirada realizada nem inclui roteamento de pré-enchimento.',
+            'volume_referencia': 'filling_min_rate_m3s * horas_estagio * 0.0036; não é a meta absoluta.',
+            'fora_do_enchimento': 'volume_referencia_enchimento_hm3, filling_target_hm3 e deficit_meta_enchimento_hm3 são nulos.',
+            'mes_referencia': 'Ano-mês da data inicial do estágio; durações vêm dos patamares, não do mês civil.',
+            'horas_estagio_unidade': 'h',
+        },
         formula='sum_u sum_b [(turbined_m3s + spillage_m3s) * hours_b / sum_b(hours_b)]',
         escopo='Soma das montantes diretas selecionadas no mesmo cenário, estágio e nó. Sem adicionar slack, desvios, perdas ou tempo de viagem.',
-        sha256={n: hashlib.sha256((deck.pasta/n).read_bytes()).hexdigest() for n in ['stages.json', 'system/hydros.json']},
+        sha256={n: hashlib.sha256((deck.pasta/n).read_bytes()).hexdigest()
+                for n in ['stages.json', 'system/hydros.json', ARQUIVO_LIMITES] if (deck.pasta/n).is_file()},
     )
     for c in CHAVE:
         resultado[c] = resultado[c].astype('int64')

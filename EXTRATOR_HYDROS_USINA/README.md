@@ -34,7 +34,7 @@ python -m aplicacao.ler_parquet outputs/validacao_furnas_v20_2000_cenarios.parqu
 ### Gerar um consolidado
 
 1. Escolha a pasta `hydros`, contendo `scenario_id=.../data.parquet`.
-2. Escolha a raiz do **deck de entrada da mesma execução**. São necessários `stages.json` e `system/hydros.json`.
+2. Escolha a raiz do **deck de entrada da mesma execução**, preservando `stages.json`, `system/hydros.json` e, quando existente no estudo, `constraints/hydro_bounds.parquet`. O extrator lê os três automaticamente, sem novos seletores.
 3. Busque a usina pelo nome ou ID e selecione-a.
 4. Confira as montantes diretas, inicialmente todas selecionadas. Use Ctrl+clique para alterar.
 5. Clique em **Gerar Parquet da usina** e escolha o destino. A pasta padrão é `outputs`.
@@ -101,9 +101,46 @@ As novas extrações incluem os 15 campos abaixo, com os nomes originais. Eles d
 
 Os quatro campos em hm³ devem ser iguais entre os patamares de um mesmo cenário, estágio e nó. O extrator verifica isso antes de copiar o valor do patamar 0; não soma nem faz média dos volumes. Para taxas repetidas entre patamares, a média mantém o mesmo valor, dentro da precisão numérica. Para arquivos contendo apenas linhas de estágio (`block_id` nulo), todos os 15 campos são copiados diretamente.
 
-As 15 colunas são obrigatórias nas entradas das novas extrações. Campos ausentes ou valores não numéricos/não finitos da usina analisada interrompem a geração sem substituir a saída anterior; o extrator não preenche dados ausentes com zero. Os metadados `extrator_hydros` passam à versão 2 e registram `unidades_por_coluna` e `tratamento_campos_adicionais`. `unidade` passa a indicar unidades mistas; consulte o mapa por coluna.
+As 15 colunas são obrigatórias nas entradas das novas extrações. Campos ausentes ou valores não numéricos/não finitos da usina analisada interrompem a geração sem substituir a saída anterior; o extrator não preenche dados ausentes com zero. O tratamento desses campos foi introduzido nos metadados `extrator_hydros` versão 2 e permanece na versão 3, com `unidades_por_coluna` e `tratamento_campos_adicionais`. `unidade` indica unidades mistas; consulte o mapa por coluna.
 
 **Para obter esses campos em um consolidado já gerado, execute novamente o extrator a partir dos Parquets originais.** O leitor não consegue recuperar colunas descartadas de uma saída antiga. O exemplo histórico de FURNAS incluído no repositório permanece sem esses novos campos.
+
+### Enchimento, metas e retirada programada
+
+As novas extrações também cruzam o deck com as observações da usina por `hydro_id` e `stage_id`. Os parâmetros são repetidos em cada cenário, sem somar patamares nem alterar o número de linhas. No leitor, as grandezas numéricas ficam disponíveis para gráficos e exportação; período, mês e IDs aparecem na tabela.
+
+| Coluna | Unidade | Conteúdo |
+| --- | --- | --- |
+| `em_enchimento` | booleano | `filling.start_stage_id <= stage_id < entry_stage_id`, quando há configuração `filling` |
+| `filling_start_stage_id` | ID | Início do enchimento; nulo quando não há `filling` |
+| `entry_stage_id` | ID | Entrada em operação do cadastro, quando informada |
+| `mes_referencia` | AAAA-MM | Ano-mês da **data inicial** do estágio |
+| `horas_estagio` | h | Soma das horas dos patamares de `stages.json` |
+| `min_storage_hm3` | hm³ | Volume mínimo operacional resolvido para aquele estágio |
+| `filling_min_rate_m3s` | m³/s | Taxa mínima resolvida: padrão do cadastro e substituição por estágio, quando houver |
+| `volume_referencia_enchimento_hm3` | hm³ | Taxa mínima × horas do estágio × 0,0036, durante o enchimento |
+| `filling_target_hm3` | hm³ | Meta absoluta de armazenamento calculada conforme a trajetória do modelo |
+| `water_withdrawal_m3s` | m³/s | Retirada **programada**, com sinal: positiva retira água; negativa representa aporte/retorno |
+| `water_withdrawal_hm3` | hm³ | Retirada programada × horas do estágio × 0,0036 |
+| `variacao_armazenamento_hm3` | hm³ | `storage_final_hm3 - storage_initial_hm3`, em cada cenário |
+| `deficit_meta_enchimento_hm3` | hm³ | `max(0, filling_target_hm3 - storage_final_hm3)`, durante o enchimento |
+
+**Volume de referência não é a meta absoluta.** A trajetória reproduz `build_filling_v_target` do Novo Modelo v0.20.0: o último estágio de enchimento (`entry_stage_id - 1`) recebe o volume mínimo resolvido daquele estágio. Para os anteriores, o cálculo anda para trás subtraindo os volumes de referência dos estágios posteriores. Cada meta é limitada superiormente pelo volume mínimo resolvido do seu estágio, sem alimentar esse limite de volta no acumulador. Metas negativas são preservadas, como na implementação oficial; não são truncadas em zero. Se há enchimento dentro do horizonte e falta o estágio de ancoragem, a extração é interrompida, sem inventar uma meta.
+
+`constraints/hydro_bounds.parquet` é esparso: `min_storage_hm3`, `filling_min_rate_m3s` e `water_withdrawal_m3s` não nulos substituem os padrões somente da mesma UHE e estágio. Valores nulos ou ausentes não propagam valores do mês anterior. O padrão do volume mínimo vem de `reservoir.min_storage_hm3`; a taxa vem de `filling.filling_min_rate_m3s` (zero quando omitida); a retirada padrão é zero. Um zero explícito é uma substituição válida. Esses três parâmetros só podem aparecer em linhas de estágio (`block_id` ausente ou nulo); referências desconhecidas, valores inválidos e duplicatas da mesma coluna são rejeitados. Linhas distintas que configuram colunas diferentes são aceitas. Quando o Parquet de limites não existe, aplicam-se os padrões e sua ausência fica registrada nos metadados.
+
+Fora do enchimento, `volume_referencia_enchimento_hm3`, `filling_target_hm3` e `deficit_meta_enchimento_hm3` são **nulos**, não zero. O leitor mostra `N/A` na tabela, ignora esses valores em estatísticas/histogramas e os exporta como células vazias no CSV. Consolidados antigos continuam abrindo. Para estágios semanais ou de outra resolução, os volumes continuam sendo **por estágio**; não há agrupamento mensal nem uso automático de dias do mês civil.
+
+`filling_target_violation_hm3` continua sendo a folga original da simulação. O déficit é uma comparação com a meta, não uma declaração de causa nem água adicionada ao reservatório. `water_withdrawal_m3s` e `water_withdrawal_hm3` não são retirada realizada: não descontam slacks nem reproduzem o roteamento de demandas de usinas em pré-enchimento. A análise do balanço e das causas fica para a etapa seguinte.
+
+Os metadados `extrator_hydros` passam à versão **3**, mantendo o tratamento dos 15 campos anteriores e acrescentando fonte da fórmula, regras de planejamento, unidades e hash SHA-256 de `hydro_bounds.parquet` quando presente. Para reconstituir os seus dados reais é necessário executar novamente a extração com o deck e os Parquets brutos da mesma execução.
+
+Fontes oficiais:
+
+- [Schema do cadastro hidráulico](https://github.com/ons-ccee-epe/novomodelo/blob/v0.20.0/schemas/hydros.schema.json).
+- [Período de enchimento](https://github.com/ons-ccee-epe/novomodelo/blob/v0.20.0/crates/novomodelo-core/src/commissioning.rs).
+- [Resolução dos limites por estágio](https://github.com/ons-ccee-epe/novomodelo/blob/v0.20.0/crates/novomodelo-io/src/resolution/bounds.rs).
+- [Trajetória de metas e testes de referência](https://github.com/ons-ccee-epe/novomodelo/blob/v0.20.0/crates/novomodelo-sddp/src/setup/lp_build_inputs.rs).
 
 O arquivo é específico para a análise de uma usina e não carrega os parâmetros PAR do avaliador estatístico. A seleção, fórmula, cenários, caminhos e hashes dos cadastros ficam incorporados nos metadados Parquet na chave `extrator_hydros`.
 

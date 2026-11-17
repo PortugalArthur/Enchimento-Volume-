@@ -20,7 +20,8 @@ class TestExtrator(unittest.TestCase):
         self.hydros = self.raiz/'hydros'
         self.deckpath = self.raiz/'deck'
         (self.deckpath/'system').mkdir(parents=True)
-        self.usinas = [dict(id=i, name=f'UHE {i}', downstream_id=d)
+        self.usinas = [dict(id=i, name=f'UHE {i}', downstream_id=d,
+                           reservoir={'min_storage_hm3': 60, 'max_storage_hm3': 20000})
                        for i, d in [(5, 10), (10, 40), (20, 40), (40, None), (99, None)]]
         (self.deckpath/'system/hydros.json').write_text(json.dumps({'hydros': self.usinas}))
         self.stages = [dict(id=s, start_date=f'2026-0{mes}-01', end_date=f'2026-0{mes+1}-01',
@@ -114,7 +115,7 @@ class TestExtrator(unittest.TestCase):
         self.assertAlmostEqual(outra.evaporation_m3s, 55)
         self.assertAlmostEqual(outra.generation_slack_mw, 15)
         meta = json.loads(pq.read_metadata(self.saida).metadata[b'extrator_hydros'])
-        self.assertEqual(meta['versao'], 2)
+        self.assertEqual(meta['versao'], 3)
         self.assertEqual(meta['unidades_por_coluna']['storage_initial_hm3'], 'hm3')
         self.assertEqual(meta['unidades_por_coluna']['generation_slack_mw'], 'MW')
         self.assertEqual(meta['unidades_por_coluna']['evaporation_m3s'], 'm3/s')

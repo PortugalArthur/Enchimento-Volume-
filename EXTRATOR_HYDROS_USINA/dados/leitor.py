@@ -7,6 +7,8 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
+from dados.planejamento import NULOS_FORA_ENCHIMENTO
+
 
 ROTULOS = {
     'agua_de_montante_m3s': 'Água de montante',
@@ -32,10 +34,21 @@ ROTULOS = {
     'evaporation_violation_neg_m3s': 'Violação negativa de evaporação',
     'water_withdrawal_violation_pos_m3s': 'Violação positiva de retirada de água',
     'water_withdrawal_violation_neg_m3s': 'Violação negativa de retirada de água',
+    'filling_min_rate_m3s': 'Taxa mínima de enchimento',
+    'volume_referencia_enchimento_hm3': 'Volume de referência de enchimento',
+    'filling_target_hm3': 'Meta de armazenamento no enchimento',
+    'water_withdrawal_m3s': 'Retirada de água programada',
+    'water_withdrawal_hm3': 'Volume de retirada programada',
+    'min_storage_hm3': 'Volume mínimo operacional',
+    'variacao_armazenamento_hm3': 'Variação do armazenamento',
+    'deficit_meta_enchimento_hm3': 'Déficit em relação à meta de enchimento',
+    'horas_estagio': 'Duração do estágio',
 }
 
 
 def unidade(coluna):
+    if coluna == 'horas_estagio':
+        return 'h'
     if coluna.endswith('_hm3'):
         return 'hm³'
     if coluna.endswith('_mw'):
@@ -77,7 +90,15 @@ class Consolidado:
         if not metricas:
             raise ValueError('Não foram encontradas grandezas reconhecidas.')
         for c in metricas:
-            if not pd.api.types.is_numeric_dtype(df[c]) or not np.isfinite(df[c]).all():
+            nulos = df[c].isna()
+            if nulos.any():
+                permitido = (c in NULOS_FORA_ENCHIMENTO and 'em_enchimento' in df
+                             and pd.api.types.is_bool_dtype(df.em_enchimento)
+                             and not df.em_enchimento.isna().any()
+                             and not df.loc[nulos, 'em_enchimento'].any())
+                if not permitido:
+                    raise ValueError(f'A coluna {c} contém valores ausentes fora da regra de aplicabilidade.')
+            if not pd.api.types.is_numeric_dtype(df[c]) or not np.isfinite(df[c].dropna()).all():
                 raise ValueError(f'A coluna {c} contém valores ausentes, não numéricos ou não finitos.')
         bruto = (tabela.schema.metadata or {}).get(b'extrator_hydros')
         meta = json.loads(bruto) if bruto else {}

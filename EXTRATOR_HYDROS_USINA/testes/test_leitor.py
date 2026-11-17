@@ -71,6 +71,18 @@ class TestLeitor(unittest.TestCase):
         self.assertTrue(base.filtrar(123).empty)
         self.assertTrue(base.resumo('agua_de_montante_m3s', 123).empty)
 
+    def test_meta_nula_so_e_aceita_fora_do_enchimento(self):
+        self.df['em_enchimento'] = [False, True, True, False]
+        self.df['filling_target_hm3'] = [None, 40., 40., None]
+        self.salvar()
+        base = Consolidado.abrir(self.arquivo)
+        self.assertIn('filling_target_hm3', base.metricas)
+        self.assertTrue(base.resumo('filling_target_hm3', estagio=9).media.isna().all())
+        self.df.loc[1, 'filling_target_hm3'] = None
+        self.salvar()
+        with self.assertRaisesRegex(ValueError, 'aplicabilidade'):
+            Consolidado.abrir(self.arquivo)
+
     def test_abre_exemplo_real_sem_deck_original(self):
         base = Consolidado.abrir(Path(__file__).resolve().parents[1] / 'outputs/validacao_furnas_v20_2000_cenarios.parquet')
         self.assertEqual(len(base.dados), 144000)
