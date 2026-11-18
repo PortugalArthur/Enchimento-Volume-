@@ -1,0 +1,126 @@
+#!/bin/bash
+set -euo pipefail
+
+COBRE_ROOT="${COBRE_ROOT:-/home/USER/pee}"
+COBRE_BIN_DIR="${COBRE_BIN_DIR:-$COBRE_ROOT/bin}"
+JOB_PATH="${JOB_PATH:-$COBRE_BIN_DIR/cobre-dashboard.job}"
+
+DEFAULT_NODE_COUNT=4
+DEFAULT_COBRE_VERSION=0.17.0
+DEFAULT_INSTANCE_TYPE=cobre-pee-c7a
+
+usage() {
+    cat <<EOF
+Usage: $(basename "$0") [options] CASE_PATH [NODE_COUNT] [COBRE_EXEC_VERSION] [INSTANCE_TYPE]
+
+Submits a Cobre MPI run of CASE_PATH to Slurm (one MPI rank per node).
+
+Arguments may be given positionally (in the order above) or as options:
+  -n, --nodes N            Number of nodes                     (default: $DEFAULT_NODE_COUNT)
+  -v, --cobre-version V    Executable version to run           (default: $DEFAULT_COBRE_VERSION)
+  -i, --instance-type T    Passed to sbatch as --constraint=T  (default: $DEFAULT_INSTANCE_TYPE)
+      --dry-run            Print the sbatch command instead of running it
+  -h, --help               Show this help
+
+Version V runs $COBRE_BIN_DIR/cobre-mpi-V.
+
+Environment overrides: COBRE_ROOT, COBRE_BIN_DIR, JOB_PATH.
+
+Examples:
+  $(basename "$0") cases/my_case 8 0.17.0
+  $(basename "$0") cases/my_case --cobre-version 0.17.0 --instance-type c7a
+EOF
+}
+
+die() {
+    echo "error: $*" >&2
+    echo "Run '$(basename "$0") --help' for usage." >&2
+    exit 1
+}
+
+available_versions() {
+    local exe found=0
+    for exe in "$COBRE_BIN_DIR"/cobre-mpi-*; do
+        [[ -x "$exe" ]] || continue
+        echo "  ${exe##*/cobre-mpi-}"
+        found=1
+    done
+    ((found)) || echo "  (none found in $COBRE_BIN_DIR)"
+}
+
+require_value() {
+    [[ $# -ge 2 && -n "$2" ]] || die "option '$1' requires a value"
+}
+
+CASE_PATH=""
+NODE_COUNT=""
+EXEC_VERSION=""
+INSTANCE_TYPE=""
+DRY_RUN=0
+positional=()
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -h|--help)          usage; exit 0 ;;
+        -n|--nodes)         require_value "$@"; NODE_COUNT="$2"; shift 2 ;;
+        --nodes=*)          NODE_COUNT="${1#*=}"; shift ;;
+        -v|--cobre-version) require_value "$@"; EXEC_VERSION="$2"; shift 2 ;;
+        --cobre-version=*)  EXEC_VERSION="${1#*=}"; shift ;;
+        -i|--instance-type) require_value "$@"; INSTANCE_TYPE="$2"; shift 2 ;;
+        --instance-type=*)  INSTANCE_TYPE="${1#*=}"; shift ;;
+        --dry-run)          DRY_RUN=1; shift ;;
+        --)                 shift; positional+=("$@"); break ;;
+        -*)                 die "unknown option '$1'" ;;
+        *)                  positional+=("$1"); shift ;;
+    esac
+done
+
+[[ ${#positional[@]} -le 4 ]] || die "too many arguments: ${positional[*]}"
+# Explicit options win over positional arguments.
+CASE_PATH="${positional[0]:-}"
+NODE_COUNT="${NODE_COUNT:-${positional[1]:-$DEFAULT_NODE_COUNT}}"
+COBRE_EXEC_VERSION="${EXEC_VERSION:-${positional[2]:-${DEFAULT_COBRE_VERSION:-}}}"
+INSTANCE_TYPE="${INSTANCE_TYPE:-${positional[3]:-$DEFAULT_INSTANCE_TYPE}}"
+
+[[ -n "$CASE_PATH" ]] || { usage >&2; exit 1; }
+[[ -d "$CASE_PATH" ]] || die "case directory '$CASE_PATH' does not exist"
+CASE_PATH="$(realpath "$CASE_PATH")"
+
+[[ "$NODE_COUNT" =~ ^[1-9][0-9]*$ ]] || die "NODE_COUNT must be a positive integer, got '$NODE_COUNT'"
+
+if [[ -z "$COBRE_EXEC_VERSION" ]]; then
+    echo "error: COBRE_EXEC_VERSION is required. Available versions:" >&2
+    available_versions >&2
+    exit 1
+fi
+COBRE_EXE="$COBRE_BIN_DIR/cobre-mpi-$COBRE_EXEC_VERSION"
+if [[ ! -x "$COBRE_EXE" ]]; then
+    echo "error: '$COBRE_EXE' not found or not executable. Available versions:" >&2
+    available_versions >&2
+    exit 1
+fi
+
+[[ -n "$INSTANCE_TYPE" ]] || die "INSTANCE_TYPE must not be empty"
+[[ -f "$JOB_PATH" ]] || die "job script '$JOB_PATH' not found"
+
+# Command-line options override the #SBATCH directives inside the job script.
+cmd=(
+    sbatch
+    --nodes="$NODE_COUNT"
+    --constraint="$INSTANCE_TYPE"
+    --job-name="cobre-$(basename "$CASE_PATH")"
+    --export="ALL,COBRE_ROOT=$COBRE_ROOT,COBRE_BIN_DIR=$COBRE_BIN_DIR"
+    "$JOB_PATH" "$CASE_PATH" "$COBRE_EXEC_VERSION"
+)
+
+echo "case:     $CASE_PATH"
+echo "nodes:    $NODE_COUNT"
+echo "instance: $INSTANCE_TYPE"
+echo "cobre:    $COBRE_EXE"
+
+if ((DRY_RUN)); then
+    printf '%q ' "${cmd[@]}"
+    echo
+else
+    "${cmd[@]}"
+fi
